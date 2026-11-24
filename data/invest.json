@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-11-24T11:51:28.835174+00:00",
-  "count": 18,
+  "updatedAt": "2026-11-24T12:11:44.326408+00:00",
+  "count": 19,
   "quotes": [
     {
       "code": "usDJI",
@@ -38,60 +38,71 @@
     {
       "code": "hf_GC",
       "name": "纽约黄金",
-      "price": 3661.32,
-      "change": -20.38,
-      "changePercent": -0.55,
+      "price": 3649.89,
+      "change": -31.81,
+      "changePercent": -0.86,
       "high": 3707.0,
       "low": 3636.3,
-      "time": "2026-11-24 19:50:59",
+      "time": "2026-11-24 20:10:59",
       "category": "贵金属"
     },
     {
       "code": "hf_SI",
       "name": "纽约白银",
-      "price": 42.65,
-      "change": -1.06,
-      "changePercent": -2.43,
+      "price": 42.45,
+      "change": -1.26,
+      "changePercent": -2.87,
       "high": 44.35,
       "low": 42.14,
-      "time": "2026-11-24 19:50:53",
+      "time": "2026-11-24 20:10:29",
       "category": "贵金属"
     },
     {
       "code": "hf_CL",
       "name": "纽约原油",
-      "price": 80.25,
-      "change": 0.08,
-      "changePercent": 0.11,
+      "price": 80.42,
+      "change": 0.25,
+      "changePercent": 0.31,
       "high": 80.61,
       "low": 79.07,
-      "time": "2026-11-24 19:51:04",
+      "time": "2026-11-24 20:11:07",
       "category": "能源"
     },
     {
       "code": "hf_HG",
       "name": "美铜",
-      "price": 551.43,
-      "change": -20.77,
-      "changePercent": -3.63,
+      "price": 551.52,
+      "change": -20.68,
+      "changePercent": -3.61,
       "high": 572.85,
       "low": 548.1,
-      "time": "2026-11-24 19:50:59",
+      "time": "2026-11-24 20:11:06",
       "category": "工业金属"
     },
     {
       "code": "USDCNY",
       "name": "在岸人民币",
-      "price": 6.6615,
-      "change": -0.0705,
-      "changePercent": -0.0047,
+      "price": 6.6613,
+      "change": -0.078,
+      "changePercent": -0.0052,
       "high": 6.6665,
       "low": 6.6608,
-      "time": "19:50:00",
+      "time": "20:11:00",
       "category": "汇率"
     }
   ],
   "items": [
+    {
+      "id": "https://www.chinanews.com.cn/cj/2026/11-24/10737165.shtml",
+      "title": "中国牵头推动全球首个生成式人工智能治理国际标准提案",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-24/10737165.shtml",
+      "source": "中新网·财经",
+      "pubDate": "Tue, 24 Nov 2026 20:01:53 +0800",
+      "description": "中新社北京11月24日电 (记者 刘亮)中国国家市场监管总局24日在北京召开新闻发布会。记者从会上获悉，中国深度参与人工智能国际标准体系建设，其中包括牵头推动全球首个生成式人工智能治理国际标准提案。该提案聚焦生成式人工智能系统风险应对，可为推动形成全球风险管理共识提供重要支撑。",
+      "channelId": "industry",
+      "channelName": "产业科技",
+      "region": "domestic"
+    },
     {
       "id": "https://www.chinanews.com.cn/cj/2026/11-24/10737160.shtml",
       "title": "中国央行将同日开展MLF与7天期逆回购操作",
@@ -100,7 +111,8 @@
       "pubDate": "Tue, 24 Nov 2026 19:47:24 +0800",
       "description": "中新社北京11月24日电 (陶思阅)中国央行24日发布公告称，将于25日以固定数量、利率招标、多重价位中标方式开展8000亿元(人民币，下同)MLF(中期借贷便利)操作，期限为1年期。同日，央行还宣布将于25日开展5000亿元7天期逆回购操作。",
       "channelId": "macro",
-      "channelName": "宏观利率"
+      "channelName": "宏观利率",
+      "region": "domestic"
     },
     {
       "id": "https://www.chinanews.com.cn/cj/2026/11-24/10737135.shtml",
@@ -110,7 +122,8 @@
       "pubDate": "Tue, 24 Nov 2026 19:44:10 +0800",
       "description": "中新网上海11月24日电 (高志苗)上海市养老服务和老龄产业协会机构养老专业委员会24日在上海市普陀区揭牌成立。在业内专家看来，这一专业平台的诞生，恰逢上海机构养老从“有地方住”向“住得好、养得安、过得有品质”转型的关键节点，其背后是深度老龄化催生的刚性需求与行业现实挑战的双重驱动。",
       "channelId": "macro",
-      "channelName": "宏观市场"
+      "channelName": "宏观市场",
+      "region": "domestic"
     },
     {
       "id": "https://www.chinanews.com.cn/cj/2026/11-24/10737123.shtml",
@@ -120,7 +133,8 @@
       "pubDate": "Tue, 24 Nov 2026 19:27:27 +0800",
       "description": "中新网北京11月24日电 (记者 刘文文)当今世界正经历百年未有之大变局，地缘政治格局持续演变，经济复苏曲折乏力。立足当前国际变局与世界经济运行态势，长期深耕区域经济合作领域的中国东盟首席商务专家许宁宁，梳理分析国际形势与世界经济运行的十个方面重大新动向，为把握对外开放格局、深化区域经贸合作提供参考。",
       "channelId": "trade",
-      "channelName": "国际贸易"
+      "channelName": "国际贸易",
+      "region": "domestic"
     },
     {
       "id": "https://www.chinanews.com.cn/cj/2026/11-24/10737121.shtml",
@@ -130,7 +144,8 @@
       "pubDate": "Tue, 24 Nov 2026 18:57:34 +0800",
       "description": "中新网北京11月24日电 (记者 刘文文)日前，海南机场数智化转型暨“一网统管”试点发布会在海口互联网金融大厦举行。会上，中国航信与海南机场签署“一网统管”合作协议。这是中国航信“一网统管”(全机场管理TAM+)数字化转型方案首次在民航领域落地，实现了将城市治理理念与民航运行、运营业务深度融合，探索出机场数智化转型和治理的新路径。",
       "channelId": "macro",
-      "channelName": "宏观利率"
+      "channelName": "宏观利率",
+      "region": "domestic"
     },
     {
       "id": "https://www.chinanews.com.cn/cj/2026/11-24/10737119.shtml",
@@ -140,7 +155,8 @@
       "pubDate": "Tue, 24 Nov 2026 18:54:27 +0800",
       "description": "中新网西宁11月24日电(李隽)24日，记者从青海省发展和改革委员会获悉，该省以财政金融联动惠企为突破口，依托“青信融”全省融资信用服务平台，建成惠企政策“一站式”服务专区，开发惠企政策解读、在线申报、智能审核、进度跟踪、资金拨付五大功能模块，打通政策兑现“最后一公里”。",
       "channelId": "macro",
-      "channelName": "宏观利率"
+      "channelName": "宏观利率",
+      "region": "domestic"
     },
     {
       "id": "https://www.chinanews.com.cn/cj/2026/11-24/10737089.shtml",
@@ -150,7 +166,8 @@
       "pubDate": "Tue, 24 Nov 2026 17:51:24 +0800",
       "description": "中新网哈尔滨11月24日电 (韩雪)24日，由中共黑龙江省委宣传部、黑龙江省人民政府新闻办公室主办的“开局起步‘十五五’——奋力谱写中国式现代化黑龙江新篇章”系列主题新闻发布会举行第11场，本场发布会聚焦优化营商环境，介绍黑龙江为经营主体改善发展条件的相关举措。黑龙江省营商环境局党组书记、局长王淑滨在会上通报相关进展。",
       "channelId": "macro",
-      "channelName": "宏观利率"
+      "channelName": "宏观利率",
+      "region": "domestic"
     },
     {
       "id": "https://www.chinanews.com.cn/cj/2026/11-24/10737088.shtml",
@@ -160,7 +177,8 @@
       "pubDate": "Tue, 24 Nov 2026 17:51:22 +0800",
       "description": "中新网北京11月24日电 (记者 孙自法)由中国自动化学会主办的2026国家工业软件大会(NISC2026)近日举办，以“自主创‘芯’·定义制造新纪元”为主题，立足新型工业化战略背景，围绕工业软件自主创新、产学研协同攻关、人才培育与产业生态共建等议题交流研讨，夯实智能制造软件根基，共商工业软件创新发展。",
       "channelId": "industry",
-      "channelName": "产业科技"
+      "channelName": "产业科技",
+      "region": "domestic"
     },
     {
       "id": "https://www.chinanews.com.cn/cj/2026/11-24/10737079.shtml",
@@ -170,7 +188,8 @@
       "pubDate": "Tue, 24 Nov 2026 17:37:31 +0800",
       "description": "中新网济南11月24日电 (周艺伟)从矿山井下的智能“安全员”到露天矿场的无人推土机，从政务、工业领域的行业大模型到高铁线路的智能精调机器人……近日，记者走访多家山东省属国企发现，各企业依托各自的主业场景，将人工智能融入能源、重工制造、信息科技、铁路交通等领域的生产经营一线，把AI技术转化为提质增效、安全管控的现实生产力。",
       "channelId": "industry",
-      "channelName": "产业科技"
+      "channelName": "产业科技",
+      "region": "domestic"
     },
     {
       "id": "https://www.chinanews.com.cn/cj/2026/11-24/10737075.shtml",
@@ -180,7 +199,8 @@
       "pubDate": "Tue, 24 Nov 2026 17:36:37 +0800",
       "description": "中新社北京11月24日电 (记者 尹倩芸)针对欧盟宣布对混动汽车采取临时保障措施，中国商务部新闻发言人24日表示，中方将密切关注欧方后续调查进展，坚决维护中国相关产业正当权益。",
       "channelId": "trade",
-      "channelName": "国际贸易"
+      "channelName": "国际贸易",
+      "region": "domestic"
     },
     {
       "id": "https://www.chinanews.com.cn/cj/2026/11-24/10737078.shtml",
@@ -190,7 +210,8 @@
       "pubDate": "Tue, 24 Nov 2026 17:35:57 +0800",
       "description": "中新社合肥11月24日电 (记者 赵强)2026国际商协会大会24日在安徽省合肥市开幕，来自49个国家和地区的85家境外商协会、300余家境内外企业代表与会。",
       "channelId": "trade",
-      "channelName": "国际贸易"
+      "channelName": "国际贸易",
+      "region": "domestic"
     },
     {
       "id": "https://www.chinanews.com.cn/cj/2026/11-24/10737076.shtml",
@@ -200,7 +221,8 @@
       "pubDate": "Tue, 24 Nov 2026 17:35:53 +0800",
       "description": "“2026上海宝马工程机械展(bauma CHINA2026)”于2026年11月24日至27日在上海新国际博览中心举办。来自全球34个国家和地区的4120家企业参展。",
       "channelId": "trade",
-      "channelName": "国际贸易"
+      "channelName": "国际贸易",
+      "region": "domestic"
     },
     {
       "id": "https://www.chinanews.com.cn/cj/2026/11-24/10737053.shtml",
@@ -210,7 +232,8 @@
       "pubDate": "Tue, 24 Nov 2026 16:53:35 +0800",
       "description": "中新网11月24日电 据商务部网站消息，经批准，自2026年11月28日起至2027年1月27日，商务部公告2024年第46号(《关于加强相关两用物项对美国出口管制的公告》)第二款暂停实施。",
       "channelId": "trade",
-      "channelName": "国际贸易"
+      "channelName": "国际贸易",
+      "region": "domestic"
     },
     {
       "id": "https://www.chinanews.com.cn/cj/2026/11-24/10737051.shtml",
@@ -220,7 +243,8 @@
       "pubDate": "Tue, 24 Nov 2026 16:48:19 +0800",
       "description": "中新社南昌11月24日电 (李韵涵 朱莹)具身智能软件工厂上线暨洪城智算OPC(One Person Company)云创产品发布仪式24日在江西南昌举行，该软件工厂的上线旨在推动具身智能技术在工业视觉检测、物料搬运、生产辅助等制造业场景中的应用。",
       "channelId": "industry",
-      "channelName": "产业科技"
+      "channelName": "产业科技",
+      "region": "domestic"
     },
     {
       "id": "https://www.chinanews.com.cn/cj/2026/11-24/10737013.shtml",
@@ -230,7 +254,8 @@
       "pubDate": "Tue, 24 Nov 2026 16:35:56 +0800",
       "description": "中新网南昌11月24日电(卢梦梦 赵阳)11月24日，由南昌高新区管委会主办、中国联通江西省分公司承办的江西省首个工业制造具身智能软件工厂上线暨洪城智算OPC云创产品发布仪式在江西南昌举行。",
       "channelId": "industry",
-      "channelName": "产业科技"
+      "channelName": "产业科技",
+      "region": "domestic"
     },
     {
       "id": "https://www.chinanews.com.cn/cj/2026/11-24/10737009.shtml",
@@ -240,7 +265,8 @@
       "pubDate": "Tue, 24 Nov 2026 16:35:16 +0800",
       "description": "中新网北京11月24日电 (记者 张素)工业大模型辅助生成和审查工艺文件，智能算法统筹多重约束优化生产排程，视觉大模型参与在线质量检测……新技术深入制造现场，这些探索如何能为更多企业所用？",
       "channelId": "industry",
-      "channelName": "产业科技"
+      "channelName": "产业科技",
+      "region": "domestic"
     },
     {
       "id": "https://www.chinanews.com.cn/cj/2026/11-24/10737007.shtml",
@@ -250,7 +276,8 @@
       "pubDate": "Tue, 24 Nov 2026 16:34:50 +0800",
       "description": "中新网北京11月24日电 (记者 孙自法)中国材料研究学会11月24日在北京举行专题新闻吹风会宣布，第四届世界材料大会定于2027年1月24日至27日在海南举办。大会以全球材料发展问题为核心主线，汇聚全球顶尖科学家与产业创新力量，共商材料科技未来发展大计。",
       "channelId": "industry",
-      "channelName": "产业科技"
+      "channelName": "产业科技",
+      "region": "domestic"
     },
     {
       "id": "https://www.chinanews.com.cn/cj/2026/11-24/10736965.shtml",

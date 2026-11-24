@@ -26,8 +26,10 @@
     input:focus,select:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(37,99,235,.12)}
     button{cursor:pointer;border:1px solid var(--line);background:#fff;border-radius:999px;padding:10px 16px;font-weight:600;color:#344054}
     button.primary{background:var(--primary);color:#fff;border-color:var(--primary)}
-    .view-tabs,.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+    .nav-group{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+    .nav-label{font-weight:800;color:#344054;background:#eef2ff;border:1px solid #dbe4ff;border-radius:999px;padding:9px 13px}
     .view-tab.active,.tab.active{background:var(--primary);color:#fff;border-color:var(--primary)}
+    .tabs{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0 16px}
     .meta{color:var(--muted);font-size:13px;margin-bottom:14px}
     .quote-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;margin-bottom:18px}
     .quote-card{background:#fff;border:1px solid var(--line);border-radius:15px;padding:16px;box-shadow:0 5px 16px rgba(16,24,40,.05)}
@@ -52,6 +54,12 @@
     .tag-fund{background:var(--indigo-bg);color:var(--indigo)}
     .tag-industry{background:var(--cyan-bg);color:var(--cyan)}
     .tag-trade{background:var(--blue-bg);color:var(--blue)}
+    .tag-gmacro{background:var(--indigo-bg);color:var(--indigo)}
+    .tag-gstocks{background:var(--purple-bg);color:var(--purple)}
+    .tag-gbank{background:var(--teal-bg);color:var(--teal)}
+    .tag-gcommodities{background:var(--gold-bg);color:var(--gold)}
+    .tag-gtech{background:var(--cyan-bg);color:var(--cyan)}
+    .tag-gcompany{background:var(--orange-bg);color:var(--orange)}
     .source{font-size:12px;color:var(--muted)}
     h2{font-size:18px;line-height:1.45;margin:0}
     h2 a{color:var(--text);text-decoration:none}
@@ -75,19 +83,24 @@
   <header class="hero">
     <h1>HR与投资资讯在线看板</h1>
     <p id="updatedAt">正在读取最新数据……</p>
-    <p>HR固定展示最新100条；投资板块聚合公开市场资讯，定时自动更新</p>
+    <p>国内板块聚合HR实务与国内市场资讯；国外板块聚合Bloomberg、Reuters等国际公开市场信息，定时自动更新</p>
   </header>
 
   <div class="toolbar">
-    <input id="keyword" type="search" placeholder="搜索当前板块：社保、医保、仲裁、美股、黄金、美债、基金等">
+    <input id="keyword" type="search" placeholder="搜索当前板块：社保、仲裁、美股、黄金、Fed、stocks、oil等">
     <button class="primary" id="reloadBtn">重新拉取</button>
   </div>
 
-  <nav class="view-tabs" id="viewTabs">
-    <button class="view-tab" data-view="hr">最新HR</button>
-    <button class="view-tab" data-view="invest">投资资讯</button>
+  <div class="nav-group">
+    <span class="nav-label">国内板块</span>
+    <button class="view-tab" data-view="hr">国内HR</button>
+    <button class="view-tab" data-view="invest">国内投资</button>
     <button class="view-tab" data-view="history">历史资讯</button>
-  </nav>
+  </div>
+  <div class="nav-group">
+    <span class="nav-label">国外板块</span>
+    <button class="view-tab" data-view="global">国外市场</button>
+  </div>
   <nav class="tabs" id="tabs"></nav>
   <div class="meta" id="meta"></div>
   <main id="content"><div class="loading">正在加载最新资讯……</div></main>
@@ -116,18 +129,32 @@ const investChannels = [
   {id:'industry', name:'产业科技'},
   {id:'trade', name:'国际贸易'}
 ];
+const globalChannels = [
+  {id:'gbank', name:'央行利率'},
+  {id:'gstocks', name:'海外股市'},
+  {id:'gcommodities', name:'大宗商品'},
+  {id:'gtech', name:'科技产业'},
+  {id:'gcompany', name:'公司商业'},
+  {id:'gmacro', name:'全球宏观'}
+];
 const state = {
   view:'hr', active:'all', error:'',
   hrItems:[], hrUpdatedAt:'',
   investItems:[], quotes:[], investUpdatedAt:'',
+  globalItems:[], globalUpdatedAt:'',
   historyItems:[], dates:[], selectedDate:''
 };
 const readLinks = JSON.parse(localStorage.getItem('hr_online_read') || '[]');
 let favoriteLinks = JSON.parse(localStorage.getItem('hr_online_favorites') || '[]');
 
-function currentChannels(){return state.view === 'invest' ? investChannels : hrChannels;}
+function currentChannels(){
+  if(state.view === 'invest') return investChannels;
+  if(state.view === 'global') return globalChannels;
+  return hrChannels;
+}
 function currentItems(){
   if(state.view === 'invest') return state.investItems;
+  if(state.view === 'global') return state.globalItems;
   if(state.view === 'history') return state.historyItems;
   return state.hrItems;
 }
@@ -138,7 +165,11 @@ function formatTime(value){
 }
 function setUpdatedText(){
   const count = currentItems().length;
-  const updated = state.view === 'invest' ? state.investUpdatedAt : state.hrUpdatedAt;
+  const updated = state.view === 'invest'
+    ? state.investUpdatedAt
+    : state.view === 'global'
+      ? state.globalUpdatedAt
+      : state.hrUpdatedAt;
   document.getElementById('updatedAt').textContent = `数据更新时间：${formatTime(updated)}；当前共 ${count} 条`;
 }
 function renderViewTabs(){
@@ -286,11 +317,16 @@ function render(){
   const quoteGrid = renderQuoteGrid();
   if(quoteGrid) content.appendChild(quoteGrid);
   if(state.view === 'invest'){
-    const risk = Object.assign(document.createElement('div'),{
+    content.appendChild(Object.assign(document.createElement('div'),{
       className:'notice',
       textContent:'资讯和行情来自公开数据源，免费版为定时更新，非交易所级实时行情；仅供参考，不构成投资建议。'
-    });
-    content.appendChild(risk);
+    }));
+  }
+  if(state.view === 'global'){
+    content.appendChild(Object.assign(document.createElement('div'),{
+      className:'notice',
+      textContent:'国际资讯来自公开RSS或公开新闻聚合，部分原文可能受地域、登录或付费墙限制；仅供参考，不构成投资建议。'
+    }));
   }
   const items = getFilteredItems();
   document.getElementById('meta').textContent = `当前显示 ${items.length} 条；已读 ${readLinks.length} 条，收藏 ${favoriteLinks.length} 条。`;
@@ -308,6 +344,10 @@ function applyInvestPayload(data){
   state.investItems = data.items || [];
   state.quotes = data.quotes || [];
   state.investUpdatedAt = data.updatedAt || '';
+}
+function applyGlobalPayload(data){
+  state.globalItems = data.items || [];
+  state.globalUpdatedAt = data.updatedAt || '';
 }
 async function loadHr(){
   try{
@@ -339,6 +379,21 @@ async function loadInvest(){
     return false;
   }
 }
+async function loadGlobal(){
+  try{
+    const response = await fetch(`data/global.json?t=${Date.now()}`, {cache:'no-store'});
+    if(!response.ok) throw new Error(`国际数据读取失败：${response.status}`);
+    applyGlobalPayload(await response.json());
+    return false;
+  }catch(error){
+    if(window.INLINE_GLOBAL_DATA && window.INLINE_GLOBAL_DATA.items){
+      applyGlobalPayload(window.INLINE_GLOBAL_DATA);
+      return true;
+    }
+    state.error = `暂时无法读取国际数据：${error.message}`;
+    return false;
+  }
+}
 async function loadHistoryIndex(){
   const response = await fetch(`data/daily/index.json?t=${Date.now()}`, {cache:'no-store'});
   if(!response.ok) throw new Error(`历史索引读取失败：${response.status}`);
@@ -363,12 +418,15 @@ async function loadData(){
   if(state.view === 'history'){
     try{await loadHistoryIndex();}catch(error){state.error = error.message;}
   }else{
-    const [hrOffline, investOffline] = await Promise.all([loadHr(), loadInvest()]);
+    const [hrOffline, investOffline, globalOffline] = await Promise.all([loadHr(), loadInvest(), loadGlobal()]);
     if(state.view === 'hr' && hrOffline){
       state.error = '当前为本地直接打开模式，已显示内置HR数据；部署到GitHub后会自动读取在线最新数据。';
     }
     if(state.view === 'invest' && investOffline){
       state.error = '当前为本地直接打开模式，已显示内置投资数据；部署到GitHub后会自动读取在线最新数据。';
+    }
+    if(state.view === 'global' && globalOffline){
+      state.error = '当前为本地直接打开模式，已显示内置国际数据；部署到GitHub后会自动读取在线最新数据。';
     }
   }
   render();

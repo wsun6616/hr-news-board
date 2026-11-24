@@ -1,14 +1,17 @@
 #!/usr/bin/env python3
-"""HR资讯免费在线版抓取脚本。
+"""HR与投资资讯免费在线版抓取脚本。
+
 仅使用 Python 标准库，适合 GitHub Actions 定时运行。
+公开仓库只写入公开资讯，不写入任何个人持仓、账户或聊天记录。
 """
 import json
 import re
 import sys
 from datetime import datetime, timedelta, timezone
+from email.utils import parsedate_to_datetime
 from html import unescape
 from pathlib import Path
-from urllib.parse import urljoin
+from urllib.parse import quote, urljoin
 from urllib.request import Request, urlopen
 import xml.etree.ElementTree as ET
 
@@ -18,11 +21,13 @@ DAILY_DIR = DATA_DIR / "daily"
 LATEST_PATH = DATA_DIR / "latest.json"
 ARCHIVE_PATH = DATA_DIR / "archive.json"
 INVEST_PATH = DATA_DIR / "invest.json"
+GLOBAL_PATH = DATA_DIR / "global.json"
 INLINE_DATA_PATH = DATA_DIR / "inline-data.js"
 STANDALONE_PATH = ROOT / "双击打开-100条.html"
 MAX_LATEST = 100
 MAX_ARCHIVE = 500
 MAX_INVEST = 50
+MAX_GLOBAL = 50
 BJT = timezone(timedelta(hours=8))
 
 HUBEI_WORK_URL = "https://rst.hubei.gov.cn/bmdt/dtyw/gzdt/index_zzms.shtml"
@@ -30,6 +35,29 @@ MOHRSS_RSS_URL = "https://www.mohrss.gov.cn/SYrlzyhshbzb/dongtaixinwen/SYtupianx
 CHINA_FINANCE_RSS_URL = "https://www.chinanews.com.cn/rss/finance.xml"
 TENCENT_QUOTE_URL = "https://qt.gtimg.cn/q=usDJI,usIXIC,usINX,hf_GC,hf_SI,hf_CL,hf_HG"
 SINA_FX_URL = "https://hq.sinajs.cn/list=fx_susdcny"
+
+# Bloomberg、Reuters 旧官方 RSS 在部分网络中已停用或不稳定，仍保留尝试。
+BLOOMBERG_RSS_URLS = [
+    "https://feeds.bloomberg.com/markets/news.rss",
+    "https://feeds.bloomberg.com/business/news.rss",
+    "https://feeds.bloomberg.com/economics/news.rss",
+]
+REUTERS_RSS_URLS = [
+    "https://feeds.reuters.com/reuters/businessNews",
+    "https://feeds.reuters.com/reuters/technologyNews",
+    "https://feeds.reuters.com/news/wealth",
+]
+
+# 稳定的国际公开备用源。
+GLOBAL_DIRECT_FEEDS = [
+    ("CNBC", "https://www.cnbc.com/id/100003114/device/rss/rss.html"),
+    ("CNBC", "https://www.cnbc.com/id/10001147/device/rss/rss.html"),
+    ("CNBC", "https://www.cnbc.com/id/15839135/device/rss/rss.html"),
+    ("CNBC", "https://www.cnbc.com/id/10000664/device/rss/rss.html"),
+    ("Nasdaq", "https://www.nasdaq.com/feed/rssoutbound?category=Markets"),
+    ("NPR", "https://feeds.npr.org/1006/rss.xml"),
+    ("ABC News", "https://abcnews.go.com/abcnews/businessheadlines"),
+]
 
 POSITIVE_RE = re.compile(
     r"社保|医保|养老|医疗|公积金|退休|生育|失业|社保卡|劳动合同|试用期|工伤|仲裁|欠薪|加班|裁员|竞业|"
@@ -45,6 +73,19 @@ INVEST_RE = re.compile(
     r"金融|融资|经贸|关税|出口|进口|世界经济|营商环境|芯片|人工智能|软件|出海|产业|企业"
 )
 INVEST_EXCLUDE_RE = re.compile(r"乡村|扶贫|帮扶|农田|蔬菜|操场|学校|公益|铁路|渔业|门店|古茗|小学|医圣|医院|经方|医疗")
+
+GLOBAL_RE = re.compile(
+    r"market|stock|stocks|share|shares|bond|bonds|fed|federal reserve|rate|rates|interest|inflation|"
+    r"economy|economic|treasury|yield|dollar|currency|oil|gold|silver|copper|commodity|commodities|"
+    r"etf|fund|central bank|earnings|company|companies|tech|technology|ai|artificial intelligence|"
+    r"semiconductor|chip|chips|trade|tariff|nasdaq|s&p|dow|wall street|global|bank|banks|deal|"
+    r"business|macro|recession|ecb|imf|crude|brent|wti|merger|acquisition|ipo|equity|equities",
+    re.I,
+)
+GLOBAL_EXCLUDE_RE = re.compile(
+    r"sport|celebrity|movie|music|weather|royal|oscars|grammy|nfl|nba|hollywood|game|horoscope|obituary",
+    re.I,
+)
 
 
 def fetch_bytes(url, encoding=None):
@@ -80,6 +121,26 @@ def to_float(value):
         return round(float(value), 4)
     except (TypeError, ValueError):
         return None
+
+
+def parse_datetime(value):
+    value = clean_text(value)
+    if not value:
+        return None
+    try:
+        return parsedate_to_datetime(value)
+    except (TypeError, ValueError, IndexError):
+        pass
+    try:
+        return datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except ValueError:
+        pass
+    for fmt in ("%Y-%m-%d %H:%M", "%Y-%m-%d"):
+        try:
+            return datetime.strptime(value, fmt)
+        except ValueError:
+            continue
+    return None
 
 
 def classify(title, description):
@@ -130,6 +191,25 @@ def classify_invest(title, description):
     return "macro", "宏观市场"
 
 
+def classify_global(title, description):
+    text = f"{title} {description}"
+    rules = (
+        (re.compile(r"fed|federal reserve|ecb|central bank|rate|rates|interest|inflation|cpi|pce|treasury|yield|bond|bonds|dollar|currency", re.I), "gbank", "央行利率"),
+        (re.compile(r"oil|gold|silver|copper|commodity|commodities|crude|brent|wti|natural gas", re.I), "gcommodities", "大宗商品"),
+        (re.compile(r"ai|artificial intelligence|chip|chips|semiconductor|software|technology|tech|nvidia|apple|microsoft|robot", re.I), "gtech", "科技产业"),
+        (re.compile(r"stock|stocks|share|shares|wall street|nasdaq|s&p|dow|equity|equities|ipo|earnings|market", re.I), "gstocks", "海外股市"),
+        (re.compile(r"company|companies|merger|acquisition|deal|business|ceo|bank|banks|retail|automaker", re.I), "gcompany", "公司商业"),
+        (re.compile(r"economy|economic|global|trade|tariff|imf|recession|macro", re.I), "gmacro", "全球宏观"),
+    )
+    for regex, channel_id, channel_name in rules:
+        if regex.search(title):
+            return channel_id, channel_name
+    for regex, channel_id, channel_name in rules:
+        if regex.search(text):
+            return channel_id, channel_name
+    return "gmacro", "全球宏观"
+
+
 def build_item(title, link, source, pub_date, description):
     title = clean_text(title)
     description = clean_text(description)
@@ -145,6 +225,7 @@ def build_item(title, link, source, pub_date, description):
         "description": description[:220],
         "channelId": channel_id,
         "channelName": channel_name,
+        "region": "domestic",
     }
 
 
@@ -164,7 +245,51 @@ def build_invest_item(title, link, source, pub_date, description):
         "description": description[:220],
         "channelId": channel_id,
         "channelName": channel_name,
+        "region": "domestic",
     }
+
+
+def build_global_item(title, link, source, pub_date, description):
+    title = clean_text(title)
+    title = re.sub(r"\s+-\s+(Bloomberg|Reuters|CNBC|Nasdaq|NPR|ABC News)$", "", title, flags=re.I)
+    description = clean_text(description)
+    text = f"{title} {description}"
+    if not title or not link or not GLOBAL_RE.search(text) or GLOBAL_EXCLUDE_RE.search(title):
+        return None
+    channel_id, channel_name = classify_global(title, description)
+    return {
+        "id": link,
+        "title": title,
+        "link": link,
+        "source": source,
+        "pubDate": pub_date,
+        "description": description[:220],
+        "channelId": channel_id,
+        "channelName": channel_name,
+        "region": "global",
+    }
+
+
+def parse_rss(url, default_source, builder):
+    xml_text = fetch_text(url)
+    root = ET.fromstring(xml_text)
+    items = []
+    for node in root.findall(".//item"):
+        def get_text(tag):
+            found = node.find(tag)
+            return clean_text(found.text) if found is not None and found.text else ""
+
+        source = get_text("source") or default_source
+        item = builder(
+            title=get_text("title"),
+            link=get_text("link"),
+            source=source,
+            pub_date=get_text("pubDate"),
+            description=get_text("description"),
+        )
+        if item:
+            items.append(item)
+    return items
 
 
 def parse_hubei_work():
@@ -190,45 +315,32 @@ def parse_hubei_work():
 
 
 def parse_mohrss_rss():
-    xml_text = fetch_text(MOHRSS_RSS_URL)
-    root = ET.fromstring(xml_text)
-    items = []
-    for node in root.findall(".//item"):
-        def get_text(tag):
-            found = node.find(tag)
-            return clean_text(found.text) if found is not None and found.text else ""
-
-        item = build_item(
-            title=get_text("title"),
-            link=get_text("link"),
-            source="人力资源和社会保障部",
-            pub_date=get_text("pubDate"),
-            description=get_text("description"),
-        )
-        if item:
-            items.append(item)
-    return items
+    return parse_rss(MOHRSS_RSS_URL, "人力资源和社会保障部", build_item)
 
 
 def parse_invest_news():
-    xml_text = fetch_text(CHINA_FINANCE_RSS_URL)
-    root = ET.fromstring(xml_text)
-    items = []
-    for node in root.findall(".//item"):
-        def get_text(tag):
-            found = node.find(tag)
-            return clean_text(found.text) if found is not None and found.text else ""
+    return parse_rss(CHINA_FINANCE_RSS_URL, "中新网·财经", build_invest_item)
 
-        item = build_invest_item(
-            title=get_text("title"),
-            link=get_text("link"),
-            source="中新网·财经",
-            pub_date=get_text("pubDate"),
-            description=get_text("description"),
+
+def google_news_url(brand):
+    query = (
+        f"site:{brand.lower()}.com AND "
+        "(markets OR economy OR stocks OR bonds OR fed OR interest rates OR inflation OR dollar OR gold OR oil)"
+    )
+    return "https://news.google.com/rss/search?hl=en-US&gl=US&ceid=US:en&q=" + quote(query)
+
+
+def parse_google_news_brand(brand):
+    def builder(title, link, source, pub_date, description):
+        actual_source = brand if brand.lower() in source.lower() else source or brand
+        return build_global_item(
+            title=title,
+            link=link,
+            source=f"{actual_source} · Google News",
+            pub_date=pub_date,
+            description=description,
         )
-        if item:
-            items.append(item)
-    return items
+    return parse_rss(google_news_url(brand), brand, builder)
 
 
 def parse_market_quotes():
@@ -292,15 +404,12 @@ def parse_market_quotes():
 
 
 def time_key(item):
-    for fmt in ("%Y-%m-%d %H:%M", "%a, %d %b %Y %H:%M:%S %z", "%Y-%m-%d"):
-        try:
-            parsed = datetime.strptime(item["pubDate"], fmt)
-            if parsed.tzinfo:
-                parsed = parsed.astimezone(timezone.utc).replace(tzinfo=None)
-            return parsed.timestamp()
-        except ValueError:
-            continue
-    return 0
+    parsed = parse_datetime(item.get("pubDate"))
+    if parsed is None:
+        return 0
+    if parsed.tzinfo:
+        parsed = parsed.astimezone(timezone.utc).replace(tzinfo=None)
+    return parsed.timestamp()
 
 
 def load_old_archive():
@@ -338,6 +447,55 @@ def save_invest(items, quotes):
         "items": invest_items,
     }
     INVEST_PATH.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    return payload
+
+
+def parse_global_news(errors):
+    items = []
+
+    # 优先获取 Bloomberg、Reuters 来源。
+    for brand in ("Bloomberg", "Reuters"):
+        try:
+            items.extend(parse_google_news_brand(brand))
+        except Exception as exc:
+            errors.append(f"Google News {brand}: {exc}")
+
+    # 若官方旧 RSS 仍可用，则直接接入。
+    for source, urls in (("Bloomberg", BLOOMBERG_RSS_URLS), ("Reuters", REUTERS_RSS_URLS)):
+        for url in urls:
+            try:
+                items.extend(parse_rss(url, source, build_global_item))
+            except Exception as exc:
+                errors.append(f"{source} RSS: {exc}")
+
+    # 稳定国际来源兜底，保证国外板块不空。
+    for source, url in GLOBAL_DIRECT_FEEDS:
+        try:
+            items.extend(parse_rss(url, source, build_global_item))
+        except Exception as exc:
+            errors.append(f"{source} RSS: {exc}")
+
+    unique = {}
+    seen_titles = set()
+    for item in items:
+        title_key = re.sub(r"[^a-z0-9]+", "", item["title"].lower())[:90]
+        if title_key in seen_titles:
+            continue
+        seen_titles.add(title_key)
+        unique[item["link"]] = item
+    return sorted(unique.values(), key=time_key, reverse=True)[:MAX_GLOBAL]
+
+
+def save_global(items):
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
+    sources = sorted({item["source"] for item in items})
+    payload = {
+        "updatedAt": datetime.now(timezone.utc).isoformat(),
+        "count": len(items),
+        "sources": sources,
+        "items": items,
+    }
+    GLOBAL_PATH.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
     return payload
 
 
@@ -392,19 +550,20 @@ def save_data(items):
     save_daily(latest, timestamp)
 
     invest_payload = None
+    global_payload = None
     if INVEST_PATH.exists():
         invest_payload = json.loads(INVEST_PATH.read_text(encoding="utf-8"))
-    index_html = (ROOT / "index.html").read_text(encoding="utf-8")
-    invest_script = ""
+    if GLOBAL_PATH.exists():
+        global_payload = json.loads(GLOBAL_PATH.read_text(encoding="utf-8"))
+
+    inline_scripts = ["<script>window.INLINE_HR_DATA = " + json.dumps(latest_payload, ensure_ascii=False, indent=2) + ";</script>"]
     if invest_payload:
-        invest_script = "<script>window.INLINE_INVEST_DATA = " + json.dumps(invest_payload, ensure_ascii=False, indent=2) + ";</script>"
-    standalone_html = index_html.replace(
-        '<script src="data/inline-data.js"></script>',
-        "<script>window.INLINE_HR_DATA = "
-        + json.dumps(latest_payload, ensure_ascii=False, indent=2)
-        + ";</script>"
-        + invest_script,
-    )
+        inline_scripts.append("<script>window.INLINE_INVEST_DATA = " + json.dumps(invest_payload, ensure_ascii=False, indent=2) + ";</script>")
+    if global_payload:
+        inline_scripts.append("<script>window.INLINE_GLOBAL_DATA = " + json.dumps(global_payload, ensure_ascii=False, indent=2) + ";</script>")
+
+    index_html = (ROOT / "index.html").read_text(encoding="utf-8")
+    standalone_html = index_html.replace('<script src="data/inline-data.js"></script>', "\n".join(inline_scripts))
     STANDALONE_PATH.write_text(standalone_html, encoding="utf-8")
     return latest, archive
 
@@ -431,11 +590,19 @@ def main():
         errors.append(f"parse_market_quotes: {exc}")
     invest_payload = save_invest(load_old_invest() + invest_items, quotes)
 
+    global_items = parse_global_news(errors)
+    global_payload = save_global(global_items)
+
     latest, archive = save_data(old_items + collected)
-    print(f"latest={len(latest)} archive={len(archive)} invest={invest_payload['count']} quotes={len(quotes)}")
+    print(
+        f"latest={len(latest)} archive={len(archive)} "
+        f"invest={invest_payload['count']} quotes={len(quotes)} global={global_payload['count']}"
+    )
     if errors:
         print("warnings:", " | ".join(errors), file=sys.stderr)
     if not latest:
+        sys.exit(1)
+    if not global_payload["items"]:
         sys.exit(1)
 
 
