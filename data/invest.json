@@ -1,0 +1,256 @@
+{
+  "updatedAt": "2026-11-24T11:44:31.924407+00:00",
+  "count": 16,
+  "quotes": [
+    {
+      "code": "usDJI",
+      "name": "道琼斯",
+      "price": 49595.31,
+      "change": 1447.98,
+      "changePercent": 3.01,
+      "high": 49810.26,
+      "low": 49033.31,
+      "time": "2026-11-23 16:42:39",
+      "category": "美股指数"
+    },
+    {
+      "code": "usIXIC",
+      "name": "纳斯达克",
+      "price": 24089.56,
+      "change": 1471.83,
+      "changePercent": 6.51,
+      "high": 24353.65,
+      "low": 23794.96,
+      "time": "2026-11-23 17:15:59",
+      "category": "美股指数"
+    },
+    {
+      "code": "usINX",
+      "name": "标普500",
+      "price": 7237.17,
+      "change": 326.78,
+      "changePercent": 4.73,
+      "high": 7295.6,
+      "low": 7152.66,
+      "time": "2026-11-23 16:42:33",
+      "category": "美股指数"
+    },
+    {
+      "code": "hf_GC",
+      "name": "纽约黄金",
+      "price": 3661.31,
+      "change": -20.39,
+      "changePercent": -0.55,
+      "high": 3707.0,
+      "low": 3636.3,
+      "time": "2026-11-24 19:44:05",
+      "category": "贵金属"
+    },
+    {
+      "code": "hf_SI",
+      "name": "纽约白银",
+      "price": 42.58,
+      "change": -1.13,
+      "changePercent": -2.59,
+      "high": 44.35,
+      "low": 42.14,
+      "time": "2026-11-24 19:43:53",
+      "category": "贵金属"
+    },
+    {
+      "code": "hf_CL",
+      "name": "纽约原油",
+      "price": 80.19,
+      "change": 0.02,
+      "changePercent": 0.03,
+      "high": 80.61,
+      "low": 79.07,
+      "time": "2026-11-24 19:44:08",
+      "category": "能源"
+    },
+    {
+      "code": "hf_HG",
+      "name": "美铜",
+      "price": 550.65,
+      "change": -21.55,
+      "changePercent": -3.77,
+      "high": 572.85,
+      "low": 548.1,
+      "time": "2026-11-24 19:44:00",
+      "category": "工业金属"
+    },
+    {
+      "code": "USDCNY",
+      "name": "在岸人民币",
+      "price": 6.6615,
+      "change": -0.081,
+      "changePercent": -0.0054,
+      "high": 6.6665,
+      "low": 6.6608,
+      "time": "19:44:00",
+      "category": "汇率"
+    }
+  ],
+  "items": [
+    {
+      "id": "https://www.chinanews.com.cn/cj/2026/11-24/10737123.shtml",
+      "title": "专家分析当前国际形势与世界经济十大动向",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-24/10737123.shtml",
+      "source": "中新网·财经",
+      "pubDate": "Tue, 24 Nov 2026 19:27:27 +0800",
+      "description": "中新网北京11月24日电 (记者 刘文文)当今世界正经历百年未有之大变局，地缘政治格局持续演变，经济复苏曲折乏力。立足当前国际变局与世界经济运行态势，长期深耕区域经济合作领域的中国东盟首席商务专家许宁宁，梳理分析国际形势与世界经济运行的十个方面重大新动向，为把握对外开放格局、深化区域经贸合作提供参考。",
+      "channelId": "trade",
+      "channelName": "国际贸易"
+    },
+    {
+      "id": "https://www.chinanews.com.cn/cj/2026/11-24/10737121.shtml",
+      "title": "民航首个“一网统管”数字化转型方案在海南机场试点落地",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-24/10737121.shtml",
+      "source": "中新网·财经",
+      "pubDate": "Tue, 24 Nov 2026 18:57:34 +0800",
+      "description": "中新网北京11月24日电 (记者 刘文文)日前，海南机场数智化转型暨“一网统管”试点发布会在海口互联网金融大厦举行。会上，中国航信与海南机场签署“一网统管”合作协议。这是中国航信“一网统管”(全机场管理TAM+)数字化转型方案首次在民航领域落地，实现了将城市治理理念与民航运行、运营业务深度融合，探索出机场数智化转型和治理的新路径。",
+      "channelId": "macro",
+      "channelName": "宏观利率"
+    },
+    {
+      "id": "https://www.chinanews.com.cn/cj/2026/11-24/10737119.shtml",
+      "title": "青海：惠企政策“一站式”服务助推营商环境便利度跃升",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-24/10737119.shtml",
+      "source": "中新网·财经",
+      "pubDate": "Tue, 24 Nov 2026 18:54:27 +0800",
+      "description": "中新网西宁11月24日电(李隽)24日，记者从青海省发展和改革委员会获悉，该省以财政金融联动惠企为突破口，依托“青信融”全省融资信用服务平台，建成惠企政策“一站式”服务专区，开发惠企政策解读、在线申报、智能审核、进度跟踪、资金拨付五大功能模块，打通政策兑现“最后一公里”。",
+      "channelId": "macro",
+      "channelName": "宏观利率"
+    },
+    {
+      "id": "https://www.chinanews.com.cn/cj/2026/11-24/10737089.shtml",
+      "title": "黑龙江推出多项改革举措 持续优化营商环境吸引投资",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-24/10737089.shtml",
+      "source": "中新网·财经",
+      "pubDate": "Tue, 24 Nov 2026 17:51:24 +0800",
+      "description": "中新网哈尔滨11月24日电 (韩雪)24日，由中共黑龙江省委宣传部、黑龙江省人民政府新闻办公室主办的“开局起步‘十五五’——奋力谱写中国式现代化黑龙江新篇章”系列主题新闻发布会举行第11场，本场发布会聚焦优化营商环境，介绍黑龙江为经营主体改善发展条件的相关举措。黑龙江省营商环境局党组书记、局长王淑滨在会上通报相关进展。",
+      "channelId": "macro",
+      "channelName": "宏观利率"
+    },
+    {
+      "id": "https://www.chinanews.com.cn/cj/2026/11-24/10737088.shtml",
+      "title": "聚焦自主创“芯”和智能制造 2026国家工业软件大会举办",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-24/10737088.shtml",
+      "source": "中新网·财经",
+      "pubDate": "Tue, 24 Nov 2026 17:51:22 +0800",
+      "description": "中新网北京11月24日电 (记者 孙自法)由中国自动化学会主办的2026国家工业软件大会(NISC2026)近日举办，以“自主创‘芯’·定义制造新纪元”为主题，立足新型工业化战略背景，围绕工业软件自主创新、产学研协同攻关、人才培育与产业生态共建等议题交流研讨，夯实智能制造软件根基，共商工业软件创新发展。",
+      "channelId": "industry",
+      "channelName": "产业科技"
+    },
+    {
+      "id": "https://www.chinanews.com.cn/cj/2026/11-24/10737079.shtml",
+      "title": "山东国企依托主业场景加快布局人工智能新赛道",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-24/10737079.shtml",
+      "source": "中新网·财经",
+      "pubDate": "Tue, 24 Nov 2026 17:37:31 +0800",
+      "description": "中新网济南11月24日电 (周艺伟)从矿山井下的智能“安全员”到露天矿场的无人推土机，从政务、工业领域的行业大模型到高铁线路的智能精调机器人……近日，记者走访多家山东省属国企发现，各企业依托各自的主业场景，将人工智能融入能源、重工制造、信息科技、铁路交通等领域的生产经营一线，把AI技术转化为提质增效、安全管控的现实生产力。",
+      "channelId": "industry",
+      "channelName": "产业科技"
+    },
+    {
+      "id": "https://www.chinanews.com.cn/cj/2026/11-24/10737075.shtml",
+      "title": "中国商务部回应欧盟宣布对混动汽车采取临时保障措施",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-24/10737075.shtml",
+      "source": "中新网·财经",
+      "pubDate": "Tue, 24 Nov 2026 17:36:37 +0800",
+      "description": "中新社北京11月24日电 (记者 尹倩芸)针对欧盟宣布对混动汽车采取临时保障措施，中国商务部新闻发言人24日表示，中方将密切关注欧方后续调查进展，坚决维护中国相关产业正当权益。",
+      "channelId": "trade",
+      "channelName": "国际贸易"
+    },
+    {
+      "id": "https://www.chinanews.com.cn/cj/2026/11-24/10737078.shtml",
+      "title": "2026国际商协会大会开幕 推动产供链对接与国际经贸合作",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-24/10737078.shtml",
+      "source": "中新网·财经",
+      "pubDate": "Tue, 24 Nov 2026 17:35:57 +0800",
+      "description": "中新社合肥11月24日电 (记者 赵强)2026国际商协会大会24日在安徽省合肥市开幕，来自49个国家和地区的85家境外商协会、300余家境内外企业代表与会。",
+      "channelId": "trade",
+      "channelName": "国际贸易"
+    },
+    {
+      "id": "https://www.chinanews.com.cn/cj/2026/11-24/10737076.shtml",
+      "title": "从打破垄断到“产品+服务”出海 中国巨胎亮相“宝马展”",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-24/10737076.shtml",
+      "source": "中新网·财经",
+      "pubDate": "Tue, 24 Nov 2026 17:35:53 +0800",
+      "description": "“2026上海宝马工程机械展(bauma CHINA2026)”于2026年11月24日至27日在上海新国际博览中心举办。来自全球34个国家和地区的4120家企业参展。",
+      "channelId": "trade",
+      "channelName": "国际贸易"
+    },
+    {
+      "id": "https://www.chinanews.com.cn/cj/2026/11-24/10737053.shtml",
+      "title": "商务部：继续调整实施商务部公告2024年第46号的决定",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-24/10737053.shtml",
+      "source": "中新网·财经",
+      "pubDate": "Tue, 24 Nov 2026 16:53:35 +0800",
+      "description": "中新网11月24日电 据商务部网站消息，经批准，自2026年11月28日起至2027年1月27日，商务部公告2024年第46号(《关于加强相关两用物项对美国出口管制的公告》)第二款暂停实施。",
+      "channelId": "trade",
+      "channelName": "国际贸易"
+    },
+    {
+      "id": "https://www.chinanews.com.cn/cj/2026/11-24/10737051.shtml",
+      "title": "江西上线具身智能软件工厂 推动AI融入生产线",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-24/10737051.shtml",
+      "source": "中新网·财经",
+      "pubDate": "Tue, 24 Nov 2026 16:48:19 +0800",
+      "description": "中新社南昌11月24日电 (李韵涵 朱莹)具身智能软件工厂上线暨洪城智算OPC(One Person Company)云创产品发布仪式24日在江西南昌举行，该软件工厂的上线旨在推动具身智能技术在工业视觉检测、物料搬运、生产辅助等制造业场景中的应用。",
+      "channelId": "industry",
+      "channelName": "产业科技"
+    },
+    {
+      "id": "https://www.chinanews.com.cn/cj/2026/11-24/10737013.shtml",
+      "title": "江西首个工业制造具身智能软件工厂上线",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-24/10737013.shtml",
+      "source": "中新网·财经",
+      "pubDate": "Tue, 24 Nov 2026 16:35:56 +0800",
+      "description": "中新网南昌11月24日电(卢梦梦 赵阳)11月24日，由南昌高新区管委会主办、中国联通江西省分公司承办的江西省首个工业制造具身智能软件工厂上线暨洪城智算OPC云创产品发布仪式在江西南昌举行。",
+      "channelId": "industry",
+      "channelName": "产业科技"
+    },
+    {
+      "id": "https://www.chinanews.com.cn/cj/2026/11-24/10737009.shtml",
+      "title": "智能工厂典型场景标准化研究报告发布 供先进经验复制推广参考",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-24/10737009.shtml",
+      "source": "中新网·财经",
+      "pubDate": "Tue, 24 Nov 2026 16:35:16 +0800",
+      "description": "中新网北京11月24日电 (记者 张素)工业大模型辅助生成和审查工艺文件，智能算法统筹多重约束优化生产排程，视觉大模型参与在线质量检测……新技术深入制造现场，这些探索如何能为更多企业所用？",
+      "channelId": "industry",
+      "channelName": "产业科技"
+    },
+    {
+      "id": "https://www.chinanews.com.cn/cj/2026/11-24/10737007.shtml",
+      "title": "第四届世界材料大会2027年1月在海南举办 共商材料科技发展大计",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-24/10737007.shtml",
+      "source": "中新网·财经",
+      "pubDate": "Tue, 24 Nov 2026 16:34:50 +0800",
+      "description": "中新网北京11月24日电 (记者 孙自法)中国材料研究学会11月24日在北京举行专题新闻吹风会宣布，第四届世界材料大会定于2027年1月24日至27日在海南举办。大会以全球材料发展问题为核心主线，汇聚全球顶尖科学家与产业创新力量，共商材料科技未来发展大计。",
+      "channelId": "industry",
+      "channelName": "产业科技"
+    },
+    {
+      "id": "https://www.chinanews.com.cn/cj/2026/11-24/10736965.shtml",
+      "title": "到2030年山西省属企业新能源装机规模计划达2800万千瓦",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-24/10736965.shtml",
+      "source": "中新网·财经",
+      "pubDate": "Tue, 24 Nov 2026 16:33:48 +0800",
+      "description": "中新网太原11月24日电 (记者 范丽芳)“新能源是省属企业战略性新兴产业中具备领跑条件的领域，力争‘十五五’期间，省属企业新能源装机从790万千瓦提升至2800万千瓦，储能装机达到350万千瓦。”24日，山西省国资委副主任、新闻发言人闫卫伟介绍。",
+      "channelId": "industry",
+      "channelName": "产业科技"
+    },
+    {
+      "id": "https://www.chinanews.com.cn/cj/2026/11-24/10736964.shtml",
+      "title": "中国（广东）—美国经贸合作对接会聚焦三大重点领域",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-24/10736964.shtml",
+      "source": "中新网·财经",
+      "pubDate": "Tue, 24 Nov 2026 16:33:46 +0800",
+      "description": "中新网深圳11月24日电 (记者 许青青)由广东省贸促会、美国驻广州总领事馆、美国驻广州总领事馆商务处共同主办的中国(广东)—美国经贸合作对接会23日在深圳举行。中美双方政府部门、经贸机构、商协会和重点企业代表200余人参加。",
+      "channelId": "trade",
+      "channelName": "国际贸易"
+    }
+  ]
+}

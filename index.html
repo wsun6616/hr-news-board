@@ -3,13 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HR实务资讯在线看板</title>
+  <title>HR与投资资讯在线看板</title>
   <style>
     :root{
       --primary:#2563eb;--primary-dark:#1d4ed8;--bg:#f5f7fb;--card:#fff;--text:#172033;
       --muted:#667085;--line:#e5e7eb;--green:#15803d;--green-bg:#dcfce7;
       --orange:#c2410c;--orange-bg:#ffedd5;--purple:#6d28d9;--purple-bg:#ede9fe;
-      --blue:#0369a1;--blue-bg:#e0f2fe;
+      --blue:#0369a1;--blue-bg:#e0f2fe;--red:#dc2626;--red-bg:#fee2e2;
+      --teal:#0f766e;--teal-bg:#ccfbf1;--gold:#a16207;--gold-bg:#fef3c7;
+      --indigo:#4338ca;--indigo-bg:#e0e7ff;--cyan:#0e7490;--cyan-bg:#cffafe;
     }
     *{box-sizing:border-box}
     body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
@@ -18,13 +20,21 @@
     .hero h1{margin:0 0 10px;font-size:30px}
     .hero p{margin:6px 0;opacity:.92}
     .toolbar{display:flex;gap:12px;margin:18px 0;flex-wrap:wrap}
-    input{flex:1;min-width:260px;border:1px solid var(--line);border-radius:13px;padding:13px 15px;font-size:15px;outline:none;background:#fff}
-    input:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(37,99,235,.12)}
+    input,select{border:1px solid var(--line);border-radius:13px;padding:13px 15px;font-size:15px;outline:none;background:#fff;color:var(--text)}
+    input{flex:1;min-width:260px}
+    select{min-width:190px}
+    input:focus,select:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(37,99,235,.12)}
     button{cursor:pointer;border:1px solid var(--line);background:#fff;border-radius:999px;padding:10px 16px;font-weight:600;color:#344054}
     button.primary{background:var(--primary);color:#fff;border-color:var(--primary)}
-    .tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
-    .tab.active{background:var(--primary);color:#fff;border-color:var(--primary)}
+    .view-tabs,.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+    .view-tab.active,.tab.active{background:var(--primary);color:#fff;border-color:var(--primary)}
     .meta{color:var(--muted);font-size:13px;margin-bottom:14px}
+    .quote-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;margin-bottom:18px}
+    .quote-card{background:#fff;border:1px solid var(--line);border-radius:15px;padding:16px;box-shadow:0 5px 16px rgba(16,24,40,.05)}
+    .quote-card .name{font-weight:800;font-size:15px;margin-bottom:8px}
+    .quote-card .price{font-size:22px;font-weight:800;margin-bottom:5px}
+    .quote-card .sub{font-size:12px;color:var(--muted);line-height:1.5}
+    .up{color:var(--red)}.down{color:var(--green)}.flat{color:var(--muted)}
     .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
     .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;min-height:210px;display:flex;flex-direction:column;gap:12px;box-shadow:0 5px 16px rgba(16,24,40,.05)}
     .card.read{opacity:.68}
@@ -34,6 +44,14 @@
     .tag-cases{background:var(--orange-bg);color:var(--orange)}
     .tag-market{background:var(--purple-bg);color:var(--purple)}
     .tag-policy{background:var(--blue-bg);color:var(--blue)}
+    .tag-macro{background:var(--blue-bg);color:var(--blue)}
+    .tag-usstock{background:var(--purple-bg);color:var(--purple)}
+    .tag-bond{background:var(--teal-bg);color:var(--teal)}
+    .tag-metals{background:var(--gold-bg);color:var(--gold)}
+    .tag-commodity{background:var(--orange-bg);color:var(--orange)}
+    .tag-fund{background:var(--indigo-bg);color:var(--indigo)}
+    .tag-industry{background:var(--cyan-bg);color:var(--cyan)}
+    .tag-trade{background:var(--blue-bg);color:var(--blue)}
     .source{font-size:12px;color:var(--muted)}
     h2{font-size:18px;line-height:1.45;margin:0}
     h2 a{color:var(--text);text-decoration:none}
@@ -46,49 +64,91 @@
     .star.active{color:#f59e0b}
     .loading,.empty{text-align:center;padding:50px 20px;color:var(--muted)}
     .notice{background:#fffbeb;border:1px solid #fde68a;color:#92400e;border-radius:14px;padding:14px 16px;margin-bottom:15px;line-height:1.6}
+    .history-bar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
     footer{text-align:center;color:var(--muted);font-size:12px;line-height:1.7;margin-top:24px}
-    @media(max-width:820px){.grid{grid-template-columns:1fr}.hero h1{font-size:24px}.container{padding:14px}}
+    @media(max-width:980px){.quote-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:820px){.grid{grid-template-columns:1fr}.hero h1{font-size:24px}.container{padding:14px}.quote-grid{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
 <div class="container">
   <header class="hero">
-    <h1>HR实务资讯在线看板</h1>
+    <h1>HR与投资资讯在线看板</h1>
     <p id="updatedAt">正在读取最新数据……</p>
-    <p>自动更新、按发布时间倒序、固定展示最新100条</p>
+    <p>HR固定展示最新100条；投资板块聚合公开市场资讯，定时自动更新</p>
   </header>
 
   <div class="toolbar">
-    <input id="keyword" type="search" placeholder="搜索：社保、医保、工伤、试用期、欠薪、仲裁、竞业限制">
+    <input id="keyword" type="search" placeholder="搜索当前板块：社保、医保、仲裁、美股、黄金、美债、基金等">
     <button class="primary" id="reloadBtn">重新拉取</button>
   </div>
 
+  <nav class="view-tabs" id="viewTabs">
+    <button class="view-tab" data-view="hr">最新HR</button>
+    <button class="view-tab" data-view="invest">投资资讯</button>
+    <button class="view-tab" data-view="history">历史资讯</button>
+  </nav>
   <nav class="tabs" id="tabs"></nav>
   <div class="meta" id="meta"></div>
   <main id="content"><div class="loading">正在加载最新资讯……</div></main>
 
   <footer>
     数据由定时任务自动抓取并写入公开数据文件；页面每5分钟自动检查一次更新。<br>
-    已读和收藏仅保存在当前浏览器，不涉及账号登录。
+    投资资讯仅作公开信息参考，不构成任何投资建议；已读和收藏仅保存在当前浏览器。
   </footer>
 </div>
 
 <script src="data/inline-data.js"></script>
 <script>
-const channels = [
+const hrChannels = [
   {id:'practical', name:'社保医保实务'},
   {id:'cases', name:'劳动争议案例'},
   {id:'policy', name:'政策法规'},
   {id:'market', name:'招聘市场'}
 ];
-const state = {items:[], active:'all', updatedAt:'', loading:true, error:''};
+const investChannels = [
+  {id:'macro', name:'宏观利率'},
+  {id:'usstock', name:'全球股市'},
+  {id:'bond', name:'债券市场'},
+  {id:'metals', name:'贵金属与铜'},
+  {id:'commodity', name:'大宗商品'},
+  {id:'fund', name:'基金产品'},
+  {id:'industry', name:'产业科技'},
+  {id:'trade', name:'国际贸易'}
+];
+const state = {
+  view:'hr', active:'all', error:'',
+  hrItems:[], hrUpdatedAt:'',
+  investItems:[], quotes:[], investUpdatedAt:'',
+  historyItems:[], dates:[], selectedDate:''
+};
 const readLinks = JSON.parse(localStorage.getItem('hr_online_read') || '[]');
 let favoriteLinks = JSON.parse(localStorage.getItem('hr_online_favorites') || '[]');
 
+function currentChannels(){return state.view === 'invest' ? investChannels : hrChannels;}
+function currentItems(){
+  if(state.view === 'invest') return state.investItems;
+  if(state.view === 'history') return state.historyItems;
+  return state.hrItems;
+}
+function formatTime(value){
+  if(!value) return '未知';
+  const d = new Date(value);
+  return isNaN(d.getTime()) ? value : d.toLocaleString('zh-CN',{hour12:false});
+}
+function setUpdatedText(){
+  const count = currentItems().length;
+  const updated = state.view === 'invest' ? state.investUpdatedAt : state.hrUpdatedAt;
+  document.getElementById('updatedAt').textContent = `数据更新时间：${formatTime(updated)}；当前共 ${count} 条`;
+}
+function renderViewTabs(){
+  document.querySelectorAll('.view-tab').forEach(btn => btn.classList.toggle('active', btn.dataset.view === state.view));
+}
 function renderTabs(){
   const el = document.getElementById('tabs');
-  const tabs = [{id:'all',name:'全部'}, ...channels];
   el.innerHTML = '';
+  if(state.view === 'history') return;
+  const tabs = [{id:'all',name:'全部'}, ...currentChannels()];
   tabs.forEach(tab => {
     const btn = document.createElement('button');
     btn.className = 'tab' + (state.active === tab.id ? ' active' : '');
@@ -97,7 +157,6 @@ function renderTabs(){
     el.appendChild(btn);
   });
 }
-
 function markRead(link){
   if(!readLinks.includes(link)){
     readLinks.push(link);
@@ -111,27 +170,32 @@ function toggleFavorite(link, btn){
   btn.textContent = favoriteLinks.includes(link) ? '★' : '☆';
   btn.classList.toggle('active', favoriteLinks.includes(link));
 }
-
 function getFilteredItems(){
   const keyword = document.getElementById('keyword').value.trim().toLowerCase();
-  return state.items.filter(item => {
+  return currentItems().filter(item => {
     const matchTab = state.active === 'all' || item.channelId === state.active;
     const text = `${item.title} ${item.description} ${item.source}`.toLowerCase();
     return matchTab && (!keyword || text.includes(keyword));
   });
 }
-
-function render(){
-  renderTabs();
-  const content = document.getElementById('content');
-  content.innerHTML = '';
-  const items = getFilteredItems();
-  document.getElementById('meta').textContent = `当前显示 ${items.length} 条；已读 ${readLinks.length} 条，收藏 ${favoriteLinks.length} 条。`;
-  if(state.error) content.appendChild(Object.assign(document.createElement('div'),{className:'notice',textContent:state.error}));
-  if(!items.length){
-    content.appendChild(Object.assign(document.createElement('div'),{className:'empty',textContent:'暂无匹配内容。'}));
-    return;
-  }
+function renderQuoteGrid(){
+  if(state.view !== 'invest' || !state.quotes.length) return null;
+  const grid = document.createElement('div');
+  grid.className = 'quote-grid';
+  state.quotes.forEach(q => {
+    const pctClass = q.changePercent > 0 ? 'up' : q.changePercent < 0 ? 'down' : 'flat';
+    const card = document.createElement('div');
+    card.className = 'quote-card';
+    card.innerHTML = `
+      <div class="name">${q.name}</div>
+      <div class="price">${q.price ?? '--'}</div>
+      <div class="${pctClass}">${q.change ?? '--'} / ${q.changePercent ?? '--'}%</div>
+      <div class="sub">高：${q.high ?? '--'}　低：${q.low ?? '--'}<br>${q.time || ''}</div>`;
+    grid.appendChild(card);
+  });
+  return grid;
+}
+function renderCards(items){
   const grid = document.createElement('div');
   grid.className = 'grid';
   items.forEach(item => {
@@ -184,44 +248,142 @@ function render(){
     card.append(top,title,desc,foot);
     grid.appendChild(card);
   });
-  content.appendChild(grid);
+  return grid;
 }
-
-function applyPayload(data, offlineMode = false){
-  state.items = data.items || [];
-  state.updatedAt = data.updatedAt || '';
-  const localTime = data.updatedAt
-    ? new Date(data.updatedAt).toLocaleString('zh-CN', { hour12: false })
-    : '未知';
-  document.getElementById('updatedAt').textContent = `数据更新时间：${localTime}；当前共 ${state.items.length} 条`;
-  state.error = offlineMode
-    ? '当前为本地直接打开模式，已显示内置数据；部署到GitHub后会自动读取在线最新数据。'
-    : '';
+function renderHistoryBar(){
+  const bar = document.createElement('div');
+  bar.className = 'history-bar';
+  const select = document.createElement('select');
+  select.id = 'dateSelect';
+  if(!state.dates.length){
+    const option = document.createElement('option');
+    option.textContent = '暂无历史日期';
+    select.appendChild(option);
+  }else{
+    state.dates.forEach(d => {
+      const option = document.createElement('option');
+      option.value = d.path;
+      option.textContent = `${d.date}（${d.count}条）`;
+      if(d.date === state.selectedDate) option.selected = true;
+      select.appendChild(option);
+    });
+  }
+  select.onchange = () => loadDaily(select.value);
+  const tip = document.createElement('div');
+  tip.className = 'source';
+  tip.textContent = '历史文件按日期保存；若某天定时任务未运行，则该日期可能缺失。';
+  bar.append(select,tip);
+  return bar;
 }
-
-async function loadData(){
-  state.loading = true;
+function render(){
+  renderViewTabs();
+  renderTabs();
+  setUpdatedText();
+  const content = document.getElementById('content');
+  content.innerHTML = '';
+  if(state.error) content.appendChild(Object.assign(document.createElement('div'),{className:'notice',textContent:state.error}));
+  if(state.view === 'history') content.appendChild(renderHistoryBar());
+  const quoteGrid = renderQuoteGrid();
+  if(quoteGrid) content.appendChild(quoteGrid);
+  if(state.view === 'invest'){
+    const risk = Object.assign(document.createElement('div'),{
+      className:'notice',
+      textContent:'资讯和行情来自公开数据源，免费版为定时更新，非交易所级实时行情；仅供参考，不构成投资建议。'
+    });
+    content.appendChild(risk);
+  }
+  const items = getFilteredItems();
+  document.getElementById('meta').textContent = `当前显示 ${items.length} 条；已读 ${readLinks.length} 条，收藏 ${favoriteLinks.length} 条。`;
+  if(!items.length){
+    content.appendChild(Object.assign(document.createElement('div'),{className:'empty',textContent:'暂无匹配内容。'}));
+    return;
+  }
+  content.appendChild(renderCards(items));
+}
+function applyHrPayload(data){
+  state.hrItems = data.items || [];
+  state.hrUpdatedAt = data.updatedAt || '';
+}
+function applyInvestPayload(data){
+  state.investItems = data.items || [];
+  state.quotes = data.quotes || [];
+  state.investUpdatedAt = data.updatedAt || '';
+}
+async function loadHr(){
   try{
     const response = await fetch(`data/latest.json?t=${Date.now()}`, {cache:'no-store'});
     if(!response.ok) throw new Error(`数据文件读取失败：${response.status}`);
-    const data = await response.json();
-    applyPayload(data);
+    applyHrPayload(await response.json());
+    return false;
   }catch(error){
     if(window.INLINE_HR_DATA && window.INLINE_HR_DATA.items){
-      applyPayload(window.INLINE_HR_DATA, true);
-    }else{
-      state.error = `暂时无法读取数据：${error.message}`;
+      applyHrPayload(window.INLINE_HR_DATA);
+      return true;
     }
-  }finally{
-    state.loading = false;
-    render();
+    state.error = `暂时无法读取HR数据：${error.message}`;
+    return false;
   }
 }
-
+async function loadInvest(){
+  try{
+    const response = await fetch(`data/invest.json?t=${Date.now()}`, {cache:'no-store'});
+    if(!response.ok) throw new Error(`投资数据读取失败：${response.status}`);
+    applyInvestPayload(await response.json());
+    return false;
+  }catch(error){
+    if(window.INLINE_INVEST_DATA && window.INLINE_INVEST_DATA.items){
+      applyInvestPayload(window.INLINE_INVEST_DATA);
+      return true;
+    }
+    state.error = `暂时无法读取投资数据：${error.message}`;
+    return false;
+  }
+}
+async function loadHistoryIndex(){
+  const response = await fetch(`data/daily/index.json?t=${Date.now()}`, {cache:'no-store'});
+  if(!response.ok) throw new Error(`历史索引读取失败：${response.status}`);
+  const data = await response.json();
+  state.dates = data.dates || [];
+  if(state.dates.length && !state.selectedDate) state.selectedDate = state.dates[0].date;
+  if(state.dates.length){
+    const selected = state.dates.find(d => d.date === state.selectedDate) || state.dates[0];
+    await loadDaily(selected.path);
+  }else state.historyItems = [];
+}
+async function loadDaily(path){
+  const response = await fetch(`${path}?t=${Date.now()}`, {cache:'no-store'});
+  if(!response.ok) throw new Error(`历史数据读取失败：${response.status}`);
+  const data = await response.json();
+  state.historyItems = data.items || [];
+  state.selectedDate = data.date || '';
+  render();
+}
+async function loadData(){
+  state.error = '';
+  if(state.view === 'history'){
+    try{await loadHistoryIndex();}catch(error){state.error = error.message;}
+  }else{
+    const [hrOffline, investOffline] = await Promise.all([loadHr(), loadInvest()]);
+    if(state.view === 'hr' && hrOffline){
+      state.error = '当前为本地直接打开模式，已显示内置HR数据；部署到GitHub后会自动读取在线最新数据。';
+    }
+    if(state.view === 'invest' && investOffline){
+      state.error = '当前为本地直接打开模式，已显示内置投资数据；部署到GitHub后会自动读取在线最新数据。';
+    }
+  }
+  render();
+}
+function switchView(view){
+  state.view = view;
+  state.active = 'all';
+  document.getElementById('keyword').value = '';
+  loadData();
+}
+document.querySelectorAll('.view-tab').forEach(btn => btn.onclick = () => switchView(btn.dataset.view));
 document.getElementById('keyword').addEventListener('input', render);
 document.getElementById('reloadBtn').addEventListener('click', loadData);
 loadData();
-setInterval(loadData, 5 * 60 * 1000);
+setInterval(() => {if(state.view !== 'history') loadData();}, 5 * 60 * 1000);
 </script>
 </body>
 </html>
