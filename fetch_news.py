@@ -36,7 +36,8 @@ POSITIVE_RE = re.compile(
     r"招聘|就业|薪酬|工资|用工|求职|毕业生|灵活就业|职业技能|补贴|见习|劳动人事|维权|薪资|稳岗"
 )
 NEGATIVE_RE = re.compile(
-    r"出席|会晤|致辞|表彰|访问|主持|视频会议|全体大会|部长|新闻发布会|体育|演唱会|旅游|美食|地震|洪水|枪击|台风"
+    r"出席|会晤|致辞|表彰|访问|主持|视频会议|全体大会|部长|新闻发布会|体育|演唱会|旅游|美食|地震|洪水|枪击|台风|"
+    r"活动|启动|走进|专场|仪式|会议|座谈|调研|视察|督导|部署|讲话|走访|党组|党委"
 )
 INVEST_RE = re.compile(
     r"美股|纳斯达克|纳指|标普|道指|华尔街|美联储|加息|降息|美债|国债|债券|黄金|白银|贵金属|铜|"
@@ -371,6 +372,8 @@ def save_data(items):
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     unique = {}
     for item in items:
+        if NEGATIVE_RE.search(item.get("title", "")):
+            continue
         unique[item["link"]] = item
     merged = sorted(unique.values(), key=time_key, reverse=True)
     timestamp = datetime.now(timezone.utc).timestamp()
