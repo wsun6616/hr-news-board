@@ -1,5 +1,5 @@
 window.INLINE_HR_DATA = {
-  "updatedAt": "2026-11-24T11:50:44.991828+00:00",
+  "updatedAt": "2026-11-24T11:51:28.836449+00:00",
   "count": 100,
   "items": [
     {

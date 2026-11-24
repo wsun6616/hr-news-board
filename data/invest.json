@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-24T11:50:44.985702+00:00",
+  "updatedAt": "2026-11-24T11:51:28.835174+00:00",
   "count": 18,
   "quotes": [
     {
@@ -38,12 +38,12 @@
     {
       "code": "hf_GC",
       "name": "纽约黄金",
-      "price": 3660.5,
-      "change": -21.2,
-      "changePercent": -0.58,
+      "price": 3661.32,
+      "change": -20.38,
+      "changePercent": -0.55,
       "high": 3707.0,
       "low": 3636.3,
-      "time": "2026-11-24 19:50:05",
+      "time": "2026-11-24 19:50:59",
       "category": "贵金属"
     },
     {
@@ -51,32 +51,32 @@
       "name": "纽约白银",
       "price": 42.65,
       "change": -1.06,
-      "changePercent": -2.41,
+      "changePercent": -2.43,
       "high": 44.35,
       "low": 42.14,
-      "time": "2026-11-24 19:49:47",
+      "time": "2026-11-24 19:50:53",
       "category": "贵金属"
     },
     {
       "code": "hf_CL",
       "name": "纽约原油",
-      "price": 80.29,
-      "change": 0.12,
-      "changePercent": 0.15,
+      "price": 80.25,
+      "change": 0.08,
+      "changePercent": 0.11,
       "high": 80.61,
       "low": 79.07,
-      "time": "2026-11-24 19:50:05",
+      "time": "2026-11-24 19:51:04",
       "category": "能源"
     },
     {
       "code": "hf_HG",
       "name": "美铜",
-      "price": 551.78,
-      "change": -20.42,
-      "changePercent": -3.57,
+      "price": 551.43,
+      "change": -20.77,
+      "changePercent": -3.63,
       "high": 572.85,
       "low": 548.1,
-      "time": "2026-11-24 19:50:05",
+      "time": "2026-11-24 19:50:59",
       "category": "工业金属"
     },
     {
