@@ -1,7 +1,18 @@
 window.INLINE_HR_DATA = {
-  "updatedAt": "2026-11-25T04:49:36.605539+00:00",
+  "updatedAt": "2026-11-25T15:19:26.434112+00:00",
   "count": 100,
   "items": [
+    {
+      "id": "https://rst.hubei.gov.cn/bmdt/dtyw/gzdt/202611/t20261125_6134688.shtml",
+      "title": "鄂州：“三维联动”推动政府及国企项目欠薪治理常态长效",
+      "link": "https://rst.hubei.gov.cn/bmdt/dtyw/gzdt/202611/t20261125_6134688.shtml",
+      "source": "湖北省人社厅·工作动态",
+      "pubDate": "2026-11-25 00:00",
+      "description": "鄂州市聚焦政府项目、国企项目欠薪治理，打造“责任传导、风险防控、执法处置”三维联动机制，推动欠薪治理从阶段性“集中整治”向常态化“走深走实”转变，切实维护劳动者合法权益。 畅通“责任传导链”，汇聚齐抓共管合力 市委、市政府将治理欠薪作为重大政治任务和民生底线工程，主...",
+      "channelId": "cases",
+      "channelName": "劳动争议案例",
+      "region": "domestic"
+    },
     {
       "id": "https://rst.hubei.gov.cn/bmdt/dtyw/gzdt/202611/t20261124_6133521.shtml",
       "title": "郧西：精准推进失业保险稳岗返还落地见效",
@@ -1087,17 +1098,6 @@ window.INLINE_HR_DATA = {
       "source": "湖北省人社厅·工作动态",
       "pubDate": "2026-09-03 00:00",
       "description": "就业是民生之本，帮扶贵在精准。今年以来，远安县紧扣“精准”二字，以“1个总站、14个站点、40余名专员”织就覆盖全域的三级就业服务阵地，推动就业帮扶从“撒网式”向“精准化”转变，探索出“阵地建在家门口、服务送到心坎上、岗位连到厂门口”的帮扶新路径。 变“坐等上门”为“主动敲...",
-      "channelId": "market",
-      "channelName": "招聘市场",
-      "region": "domestic"
-    },
-    {
-      "id": "https://rst.hubei.gov.cn/bmdt/dtyw/gzdt/202609/t20260903_6006688.shtml",
-      "title": "兴山：293名高校毕业生通过见习踏上就业“快车道”",
-      "link": "https://rst.hubei.gov.cn/bmdt/dtyw/gzdt/202609/t20260903_6006688.shtml",
-      "source": "湖北省人社厅·工作动态",
-      "pubDate": "2026-09-03 00:00",
-      "description": "“见习让我真正完成了从校园到职场的蜕变。在兴发集团，既有系统授课，也有师傅手把手实践带教。经过锻炼，我被企业提前留用，正式入职了。”三峡大学毕业生黄楚涵的就业经历，是兴山县今年青年就业见习工作的一个生动缩影。 今年以来，兴山县公共就业服务中心将高校毕业生就业摆在突出位...",
       "channelId": "market",
       "channelName": "招聘市场",
       "region": "domestic"
