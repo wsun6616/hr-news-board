@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-28T03:06:23.488215+00:00",
+  "updatedAt": "2026-11-28T12:43:32.692881+00:00",
   "count": 50,
   "quotes": [
     {
@@ -92,6 +92,160 @@
     }
   ],
   "items": [
+    {
+      "id": "https://www.chinanews.com.cn/cj/2026/11-28/10739389.shtml",
+      "title": "三个维度透视前10个月规上工业利润走势",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-28/10739389.shtml",
+      "source": "中新网·财经",
+      "pubDate": "Sat, 28 Nov 2026 20:34:29 +0800",
+      "description": "国家统计局11月27日发布数据显示，1至10月份，全国工业生产总体平稳，新动能快速成长，带动规模以上工业企业利润同比增长16.0%，较1至9月份加快0.5个百分点，今年以来继续保持两位数增长。",
+      "channelId": "industry",
+      "channelName": "产业科技",
+      "region": "domestic"
+    },
+    {
+      "id": "https://www.chinanews.com.cn/cj/2026/11-28/10739370.shtml",
+      "title": "企业利润“晴雨表”，一幅动能转换“透视图”（经济时评）",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-28/10739370.shtml",
+      "source": "中新网·财经",
+      "pubDate": "Sat, 28 Nov 2026 20:08:33 +0800",
+      "description": "随着“个子”越长越高、“体格”越发健硕，高技术制造业必将为经济发展注入更多源源不断的新动能。",
+      "channelId": "macro",
+      "channelName": "宏观利率",
+      "region": "domestic"
+    },
+    {
+      "id": "https://www.chinanews.com.cn/cj/2026/11-28/10739365.shtml",
+      "title": "“中国科技第一展”落幕：人工智能扎根产业 全球客商觅合作新机",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-28/10739365.shtml",
+      "source": "中新网·财经",
+      "pubDate": "Sat, 28 Nov 2026 19:58:15 +0800",
+      "description": "中新社深圳11月28日电 题：“中国科技第一展”落幕：人工智能扎根产业 全球客商觅合作新机",
+      "channelId": "industry",
+      "channelName": "产业科技",
+      "region": "domestic"
+    },
+    {
+      "id": "https://www.chinanews.com.cn/cj/2026/11-28/10739354.shtml",
+      "title": "2026中关村量子大会举办 发布多项重大成果与应用场景",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-28/10739354.shtml",
+      "source": "中新网·财经",
+      "pubDate": "Sat, 28 Nov 2026 19:28:41 +0800",
+      "description": "中新网北京11月28日电 (记者 陈杭)以“量智聚能 算启新元”为主题的2026中关村量子大会26日至27日在北京市海淀区举办。大会集中发布量子信息领域北京市重点实验室、2026量子科技重大成果和量子科技应用场景，同步举行首届“QUAFU(夸父)杯”量子计算真机挑战赛决赛，推动量子技术从实验室成果向产业化落地跃迁。",
+      "channelId": "macro",
+      "channelName": "宏观市场",
+      "region": "domestic"
+    },
+    {
+      "id": "https://www.chinanews.com.cn/cj/2026/11-28/10739355.shtml",
+      "title": "安徽太和板面“煮”出200亿元产业",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-28/10739355.shtml",
+      "source": "中新网·财经",
+      "pubDate": "Sat, 28 Nov 2026 19:28:35 +0800",
+      "description": "中新网阜阳11月28日电 (记者 张强)11月28日，安徽省阜阳市太和县举办“万人品板面”活动，吸引超10万名当地市民及海内外游客参加。",
+      "channelId": "macro",
+      "channelName": "宏观市场",
+      "region": "domestic"
+    },
+    {
+      "id": "https://www.chinanews.com.cn/cj/2026/11-28/10739349.shtml",
+      "title": "“文创科技50”榜单发布 专家解读AI如何赋能文创应用",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-28/10739349.shtml",
+      "source": "中新网·财经",
+      "pubDate": "Sat, 28 Nov 2026 19:22:15 +0800",
+      "description": "中新网北京11月28日电 (记者 张素)27日发布的“文创科技50”榜单显示，在人工智能(AI)技术大幅降低文化内容生产门槛的背景下，文创企业的核心竞争力已不再局限于单一技术壁垒，更落脚于对产业实体空间运营与用户体验的深度探索。",
+      "channelId": "industry",
+      "channelName": "产业科技",
+      "region": "domestic"
+    },
+    {
+      "id": "https://www.chinanews.com.cn/cj/2026/11-28/10739294.shtml",
+      "title": "前10月中国社会物流总额312.4万亿元 同比增长4.8%",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-28/10739294.shtml",
+      "source": "中新网·财经",
+      "pubDate": "Sat, 28 Nov 2026 17:10:14 +0800",
+      "description": "中新社北京11月28日电 (记者 阮煜琳)中国物流与采购联合会28日发布数据显示，1—10月，全国社会物流总额312.4万亿元(人民币，下同)，同比增长4.8%。中国物流运行延续稳中有进、质效提升的发展态势。",
+      "channelId": "macro",
+      "channelName": "宏观利率",
+      "region": "domestic"
+    },
+    {
+      "id": "https://www.chinanews.com.cn/cj/2026/11-28/10739277.shtml",
+      "title": "透过三张外商 “创业清单” 看中外合作新机遇",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-28/10739277.shtml",
+      "source": "中新网·财经",
+      "pubDate": "Sat, 28 Nov 2026 16:26:25 +0800",
+      "description": "第二十八届中国国际高新技术成果交易会正在举办。来高交会，外国客商都想买些什么？在13号场馆的采购和投融资对接区，记者发现，一些外国客商和创业者的清单里，不只有科技产品，还有研发资源、技术伙伴和投资机会。接下来，透过三张“创业清单”，来看高交会上的中外合作新机遇。",
+      "channelId": "macro",
+      "channelName": "宏观利率",
+      "region": "domestic"
+    },
+    {
+      "id": "https://www.chinanews.com.cn/cj/2026/11-28/10739247.shtml",
+      "title": "浙江桐乡：毛衫小镇竞速“出海元年”",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-28/10739247.shtml",
+      "source": "中新网·财经",
+      "pubDate": "Sat, 28 Nov 2026 15:51:30 +0800",
+      "description": "中新网嘉兴11月28日电(孙杨洋)眼下，浙江桐乡濮院镇进入一年中最热闹的毛衫销售旺季。上万间门店客流如织，韩语、英语不时飘入耳畔，海外客商的身影，在这座江南小镇越来越常见。",
+      "channelId": "trade",
+      "channelName": "国际贸易",
+      "region": "domestic"
+    },
+    {
+      "id": "https://www.chinanews.com.cn/cj/2026/11-28/10739245.shtml",
+      "title": "小城“智”变：浙江县域如何长出“AI森林”？",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-28/10739245.shtml",
+      "source": "中新网·财经",
+      "pubDate": "Sat, 28 Nov 2026 15:44:53 +0800",
+      "description": "中新网杭州11月28日电(傅飞扬)初冬时节，浙江嘉兴桐乡乌镇的白墙黛瓦间，流淌出独属于江南水乡的静谧。随着2026年世界互联网大会乌镇峰会闭幕，全球宾朋暂别这座千年古镇。而在桐乡的企业家队伍中，“乌镇七子”的说法仍在持续升温。",
+      "channelId": "macro",
+      "channelName": "宏观利率",
+      "region": "domestic"
+    },
+    {
+      "id": "https://www.chinanews.com.cn/cj/2026/11-28/10739220.shtml",
+      "title": "城尾乡头，搬不走的好产业",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-28/10739220.shtml",
+      "source": "中新网·财经",
+      "pubDate": "Sat, 28 Nov 2026 15:04:41 +0800",
+      "description": "阳光洒在湖北仙桃市张沟镇先锋村连片池塘上，一排排长满水草的网箱浮在水面。55岁的鳝农刘泽选撑着小船，俯身收网、分拣。",
+      "channelId": "macro",
+      "channelName": "宏观市场",
+      "region": "domestic"
+    },
+    {
+      "id": "https://www.chinanews.com.cn/cj/2026/11-28/10739201.shtml",
+      "title": "地上收订单，天上等2028，特斯拉“飞车”秀给谁看？",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-28/10739201.shtml",
+      "source": "中新网·财经",
+      "pubDate": "Sat, 28 Nov 2026 12:55:32 +0800",
+      "description": "中新网北京11月28日电(记者 查志远 实习生 黄依璇)11月14号，特斯拉Cybercab正式向德州奥斯汀受邀个人用户开放订购，售价29990美元，订阅费299美元/月，首批交付预计12月启动。巴克莱随后维持“增持”评级、目标价450美元，认为Robotaxi业务正迎来扩张拐点。资本对地面智能汽车商业化落地的追捧，恰好为一个月前那场“飞车”展示提供了参照系。",
+      "channelId": "macro",
+      "channelName": "宏观利率",
+      "region": "domestic"
+    },
+    {
+      "id": "https://www.chinanews.com.cn/cj/2026/11-28/10739204.shtml",
+      "title": "赤壁青砖茶亮相武汉茶博会 千年茶香畅销“一带一路”",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-28/10739204.shtml",
+      "source": "中新网·财经",
+      "pubDate": "Sat, 28 Nov 2026 12:52:48 +0800",
+      "description": "中新网武汉11月28日电 (胡传林 童金健 但唐静)2026咸宁赤壁青砖茶展销大会暨第34届中国武汉茶业博览交易会27日在武汉启幕。本次活动跳出产地办展传统模式，依托武汉华中商贸枢纽区位优势、密集客商资源与庞大消费市场，集中展示赤壁青砖茶产业发展成果。",
+      "channelId": "macro",
+      "channelName": "宏观市场",
+      "region": "domestic"
+    },
+    {
+      "id": "https://www.chinanews.com.cn/cj/2026/11-28/10739184.shtml",
+      "title": "2026成都国际大健康消费博览会举行 川企携地方物产寻商机",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-28/10739184.shtml",
+      "source": "中新网·财经",
+      "pubDate": "Sat, 28 Nov 2026 12:50:40 +0800",
+      "description": "中新网成都11月28日电(单鹏)由四川国际商会等主办的2026年成都国际大健康消费博览会27日至29日在成都举行。本次活动以“科技赋能健康，消费助推产业”为主题，集展览展示、招商推介、资源聚合、对话合作于一体，旨在搭建四川大健康产业建圈强链、促进大健康消费国际合作的重要平台。",
+      "channelId": "macro",
+      "channelName": "宏观市场",
+      "region": "domestic"
+    },
     {
       "id": "https://www.chinanews.com.cn/cj/2026/11-28/10739138.shtml",
       "title": "曾在“爱优腾”中排第一的爱奇艺，被1美元绊住了",
@@ -486,160 +640,6 @@
       "description": "中新网11月27日电 据中国外汇交易中心网站消息，中国人民银行授权中国外汇交易中心公布，2026年11月27日银行间外汇市场人民币汇率中间价为：1美元对人民币6.7075元，上调21个基点。",
       "channelId": "macro",
       "channelName": "宏观利率",
-      "region": "domestic"
-    },
-    {
-      "id": "https://www.chinanews.com.cn/cj/2026/11-27/10738514.shtml",
-      "title": "超6000亿元就位 回购增持再贷款如何构建资本市场“缓冲垫”？",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-27/10738514.shtml",
-      "source": "中新网·财经",
-      "pubDate": "Fri, 27 Nov 2026 09:11:45 +0800",
-      "description": "股票回购增持再贷款，是中国人民银行联合金融监管总局、中国证监会推出的支持资本市场的货币政策工具。本月初，这一政策由阶段性安排转为长期制度性安排，再贷款利率由1.25%进一步降至1%，支持对象覆盖21家全国性银行和5家系统重要性城商行。",
-      "channelId": "macro",
-      "channelName": "宏观利率",
-      "region": "domestic"
-    },
-    {
-      "id": "https://www.chinanews.com.cn/cj/2026/11-27/10738491.shtml",
-      "title": "2027丁未（羊）年贵金属纪念币今日发行",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-27/10738491.shtml",
-      "source": "中新网·财经",
-      "pubDate": "Fri, 27 Nov 2026 07:58:03 +0800",
-      "description": "中国人民银行今天(27日)正式发行2027中国丁未(羊)年贵金属纪念币一套。该套贵金属纪念币共11枚，其中金质纪念币6枚，银质纪念币4枚，铂质纪念币1枚，均为中华人民共和国法定货币。",
-      "channelId": "metals",
-      "channelName": "贵金属与铜",
-      "region": "domestic"
-    },
-    {
-      "id": "https://www.chinanews.com.cn/cj/2026/11-27/10738488.shtml",
-      "title": "主打潜江小龙虾、岳阳烧烤、柳州螺蛳粉 “风味”学院 对味产业",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-27/10738488.shtml",
-      "source": "中新网·财经",
-      "pubDate": "Fri, 27 Nov 2026 07:45:19 +0800",
-      "description": "主打潜江小龙虾、岳阳烧烤、柳州螺蛳粉",
-      "channelId": "macro",
-      "channelName": "宏观市场",
-      "region": "domestic"
-    },
-    {
-      "id": "https://www.chinanews.com.cn/cj/2026/11-27/10738481.shtml",
-      "title": "“开”出百亿级大市场！义乌仿真花热销全球",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-27/10738481.shtml",
-      "source": "中新网·财经",
-      "pubDate": "Fri, 27 Nov 2026 07:23:30 +0800",
-      "description": "不用浇水，不会凋零，如今仿真花让人们“但愿花常在”的美好愿望轻松成为日常。临近年底，海外节庆与软装需求集中释放，仿真花迎来一年中忙碌的出口时段。从单枝花销售到成套花艺方案出口，义乌已成为全球主要的仿真花生产和出口中心之一。数据显示，2025年国内仿真花行业市场规模约169亿元，出口量超50万吨，出口金额达41.9亿美元。",
-      "channelId": "trade",
-      "channelName": "国际贸易",
-      "region": "domestic"
-    },
-    {
-      "id": "https://www.chinanews.com.cn/cj/2026/11-26/10738467.shtml",
-      "title": "四大商业银行已与上市公司签订股票回购增持贷款合同超6000亿元",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-26/10738467.shtml",
-      "source": "中新网·财经",
-      "pubDate": "Thu, 26 Nov 2026 22:37:09 +0800",
-      "description": "记者今天(26日)从工商银行等商业银行了解到，在中国人民银行近日会同金融监管总局、中国证监会等部门明确将股票回购增持再贷款政策由阶段性安排转为长期制度性安排，并进一步下调再贷款利率之后，工商银行、农业银行、中国银行、建设银行等多家银行迅速落实有关部署，加大股票回购增持贷款投放力度。目前，四大商业银行已签订上市公司股票回购增持贷款合同超6000亿元。",
-      "channelId": "macro",
-      "channelName": "宏观利率",
-      "region": "domestic"
-    },
-    {
-      "id": "https://www.chinanews.com.cn/cj/2026/11-26/10738463.shtml",
-      "title": "报告指今年中国3D打印产业规模料达约860亿元",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-26/10738463.shtml",
-      "source": "中新网·财经",
-      "pubDate": "Thu, 26 Nov 2026 22:04:19 +0800",
-      "description": "中新社四川泸州11月26日电 (单鹏)2026增材制造大会26日在四川泸州开幕，会上发布的《中国增材制造产业发展报告(2026)》显示，预计2026年中国增材制造产业规模达到约860亿元(人民币，下同)。",
-      "channelId": "macro",
-      "channelName": "宏观利率",
-      "region": "domestic"
-    },
-    {
-      "id": "https://www.chinanews.com.cn/cj/2026/11-26/10738448.shtml",
-      "title": "北京支持创新医药发展 医企合作持续深化",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-26/10738448.shtml",
-      "source": "中新网·财经",
-      "pubDate": "Thu, 26 Nov 2026 21:56:06 +0800",
-      "description": "中新网北京11月26日电 (记者 徐婧)北京拥有密集的医疗机构和丰富的临床资源，全市获批国家医学中心12类、国家临床医学研究中心23个。北京市卫生健康委副主任陈航在26日举行的新闻发布会上介绍，该委员会2024年以来累计推动33家重点医药企业签约落地北京，今年以来新增7对医企结对合作。",
-      "channelId": "macro",
-      "channelName": "宏观利率",
-      "region": "domestic"
-    },
-    {
-      "id": "https://www.chinanews.com.cn/cj/2026/11-26/10738445.shtml",
-      "title": "用电量背后的产业升级逻辑（经济时评）",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-26/10738445.shtml",
-      "source": "中新网·财经",
-      "pubDate": "Thu, 26 Nov 2026 21:40:06 +0800",
-      "description": "新业态用电量的快速攀升，正是新兴产业拔节生长、新动能加快成势的生动写照。",
-      "channelId": "macro",
-      "channelName": "宏观市场",
-      "region": "domestic"
-    },
-    {
-      "id": "https://www.chinanews.com.cn/cj/2026/11-26/10738420.shtml",
-      "title": "深圳市机器人开放创新中心揭牌",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-26/10738420.shtml",
-      "source": "中新网·财经",
-      "pubDate": "Thu, 26 Nov 2026 21:26:45 +0800",
-      "description": "中新网深圳11月26日电 (记者 王坚)深圳市机器人开放创新中心(下称“中心”)26日在第二十八届高交会“深港科技金融论坛——科学家、企业家、金融家的跨界对话”上正式揭牌。",
-      "channelId": "macro",
-      "channelName": "宏观利率",
-      "region": "domestic"
-    },
-    {
-      "id": "https://www.chinanews.com.cn/cj/2026/11-26/10738418.shtml",
-      "title": "麦肯锡发布新书：很难有市场能复制中国的供应链、产业集群和创新能力",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-26/10738418.shtml",
-      "source": "中新网·财经",
-      "pubDate": "Thu, 26 Nov 2026 21:25:21 +0800",
-      "description": "中新网上海11月26日电 (记者 李佳佳)“很多企业都在问，‘下一个中国’会在哪里。但基于我们在中国市场的一线经验，我们看到，很难有另一个市场能够同时复制中国的规模、供应链纵深、产业集群和快速创新能力。”近日，全球管理咨询公司麦肯锡在上海发布新书《下一个中国，还是中国》，该书作者之一、麦肯锡中国区现任主席倪以理(Joe Ngai)在受访时如是说。",
-      "channelId": "macro",
-      "channelName": "宏观利率",
-      "region": "domestic"
-    },
-    {
-      "id": "https://www.chinanews.com.cn/cj/2026/11-26/10738404.shtml",
-      "title": "上海将促进专利产业化与国际化落地",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-26/10738404.shtml",
-      "source": "中新网·财经",
-      "pubDate": "Thu, 26 Nov 2026 21:08:44 +0800",
-      "description": "中新网上海11月26日电 (记者 陈静)上海市知识产权局党组成员、副局长卫岚26日指出，新兴领域知识产权保护要靠制度供给跟上技术迭代。据悉，后续上海将健全新兴领域保护制度，强化跨部门与涉外知识产权保护，促进专利产业化与国际化落地。",
-      "channelId": "macro",
-      "channelName": "宏观市场",
-      "region": "domestic"
-    },
-    {
-      "id": "https://www.chinanews.com.cn/cj/2026/11-26/10738408.shtml",
-      "title": "粤港澳大湾区首批用水器具水效标准亮相鹏城",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-26/10738408.shtml",
-      "source": "中新网·财经",
-      "pubDate": "Thu, 26 Nov 2026 21:07:26 +0800",
-      "description": "中新网深圳11月26日电 (记者 王坚)粤港澳大湾区首批用水器具水效“湾区标准”26日在深圳举行的第三届节水产业创新发展成果展上面向公众及媒体宣传推介。",
-      "channelId": "macro",
-      "channelName": "宏观市场",
-      "region": "domestic"
-    },
-    {
-      "id": "https://www.chinanews.com.cn/cj/2026/11-26/10738374.shtml",
-      "title": "聚焦规模化量产与产业生态共建：2026增材制造大会在泸州开幕",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-26/10738374.shtml",
-      "source": "中新网·财经",
-      "pubDate": "Thu, 26 Nov 2026 21:01:01 +0800",
-      "description": "中新网泸州11月26日电 (单鹏)以“增材启新 智造未来”为主题的2026增材制造大会26日在四川泸州开幕。",
-      "channelId": "macro",
-      "channelName": "宏观市场",
-      "region": "domestic"
-    },
-    {
-      "id": "https://www.chinanews.com.cn/cj/2026/11-26/10738391.shtml",
-      "title": "百事集团投资3.1亿元启动山东生产基地二期项目 持续加码中国市场 以数智化升级赋能食品制造高质量发展",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-26/10738391.shtml",
-      "source": "中新网·财经",
-      "pubDate": "Thu, 26 Nov 2026 20:41:06 +0800",
-      "description": "今日，全球领先的食品与饮料企业百事集团宣布，投资3.1亿元启动百事食品山东生产基地二期项目建设。继一期投产仅两年，百事集团再次加码山东，新增现代化薯片生产线，并配套建设智能仓储、包装车间、原料储存等相关设施，进一步提升基地产能、智能制造与供应链能力。项目预计于2027年10月建成投产，将进一步强化对华北、华东市场的服务能力，更好满足消费者需求。该项目也是百事近年持续在华投资、深化本土食品业务布局的又一重要里程碑。",
-      "channelId": "industry",
-      "channelName": "产业科技",
       "region": "domestic"
     }
   ]
