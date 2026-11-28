@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-27T20:43:45.191483+00:00",
+  "updatedAt": "2026-11-28T03:06:23.488215+00:00",
   "count": 50,
   "quotes": [
     {
@@ -83,8 +83,8 @@
       "code": "USDCNY",
       "name": "在岸人民币",
       "price": 6.6541,
-      "change": -0.018,
-      "changePercent": -0.0012,
+      "change": 0.0,
+      "changePercent": 0.0,
       "high": 6.6661,
       "low": 6.65,
       "time": "03:00:00",
@@ -92,6 +92,39 @@
     }
   ],
   "items": [
+    {
+      "id": "https://www.chinanews.com.cn/cj/2026/11-28/10739138.shtml",
+      "title": "曾在“爱优腾”中排第一的爱奇艺，被1美元绊住了",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-28/10739138.shtml",
+      "source": "中新网·财经",
+      "pubDate": "Sat, 28 Nov 2026 10:30:06 +0800",
+      "description": "中新网北京11月28日电(记者 谢艺观)近日，爱奇艺的一纸公告，让人看到了长视频行业的落寞一面。",
+      "channelId": "macro",
+      "channelName": "宏观利率",
+      "region": "domestic"
+    },
+    {
+      "id": "https://www.chinanews.com.cn/cj/2026/11-28/10739118.shtml",
+      "title": "海南自贸港封关后药企如何获益？海关揭晓三大“密码”",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-28/10739118.shtml",
+      "source": "中新网·财经",
+      "pubDate": "Sat, 28 Nov 2026 09:47:50 +0800",
+      "description": "中新网海口11月28日电 (记者 王子谦)海南自贸港封关运作即将满一年，自贸港红利如何赋能生物医药产业？海口海关关税处副处长辜振成27日揭晓三大“密码”：信用监管赋能、便利化监管举措支撑、加工增值政策助力。",
+      "channelId": "trade",
+      "channelName": "国际贸易",
+      "region": "domestic"
+    },
+    {
+      "id": "https://www.chinanews.com.cn/cj/2026/11-28/10739114.shtml",
+      "title": "浙江嘉兴“三件冬衣”搭上出海新通道 拓宽共富之路",
+      "link": "https://www.chinanews.com.cn/cj/2026/11-28/10739114.shtml",
+      "source": "中新网·财经",
+      "pubDate": "Sat, 28 Nov 2026 09:32:11 +0800",
+      "description": "中新网嘉兴11月28日电(傅飞扬 杨永昌)“最近订单排得满，我们旺季月工资能稳稳达到18000元，手艺好的熟练工能冲击20000元。”连日来，位于浙江海宁的嘉兴后起服饰有限公司生产车间里机声隆隆，李师傅脚下的缝纫机转个不停，指尖捏着衣料飞针走线。",
+      "channelId": "trade",
+      "channelName": "国际贸易",
+      "region": "domestic"
+    },
     {
       "id": "https://www.chinanews.com.cn/cj/2026/11-27/10739072.shtml",
       "title": "聚焦“人工智能+能源” 2026兴隆湖能源电力创新发展大会在蓉举行",
@@ -607,39 +640,6 @@
       "description": "今日，全球领先的食品与饮料企业百事集团宣布，投资3.1亿元启动百事食品山东生产基地二期项目建设。继一期投产仅两年，百事集团再次加码山东，新增现代化薯片生产线，并配套建设智能仓储、包装车间、原料储存等相关设施，进一步提升基地产能、智能制造与供应链能力。项目预计于2027年10月建成投产，将进一步强化对华北、华东市场的服务能力，更好满足消费者需求。该项目也是百事近年持续在华投资、深化本土食品业务布局的又一重要里程碑。",
       "channelId": "industry",
       "channelName": "产业科技",
-      "region": "domestic"
-    },
-    {
-      "id": "https://www.chinanews.com.cn/cj/2026/11-26/10738366.shtml",
-      "title": "中国税务部门提升纳税人缴费人合规遵从度",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-26/10738366.shtml",
-      "source": "中新网·财经",
-      "pubDate": "Thu, 26 Nov 2026 20:23:27 +0800",
-      "description": "中新社北京11月26日电 (记者 赵建华)中国国家税务总局26日公布的数据显示，今年10月，全国企业纳税人在申报期内自主申报率达93.9%，合规申报、诚信纳税成为越来越多经营主体的自觉选择。",
-      "channelId": "macro",
-      "channelName": "宏观利率",
-      "region": "domestic"
-    },
-    {
-      "id": "https://www.chinanews.com.cn/cj/2026/11-26/10738342.shtml",
-      "title": "广州跨境电商进出口规模十年增长近14倍",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-26/10738342.shtml",
-      "source": "中新网·财经",
-      "pubDate": "Thu, 26 Nov 2026 20:00:36 +0800",
-      "description": "中新社广州11月26日电 (王华 潘俊林)由广州市政府主办的2026跨境电商大会26日在广州举行。其间，广州市商务局公布的数据显示，广州跨境电商实现跨越式发展，进出口规模十年增长近14倍。",
-      "channelId": "trade",
-      "channelName": "国际贸易",
-      "region": "domestic"
-    },
-    {
-      "id": "https://www.chinanews.com.cn/cj/2026/11-26/10738336.shtml",
-      "title": "前10月河源签发输APEC其他经济体原产地证书金额近10亿元",
-      "link": "https://www.chinanews.com.cn/cj/2026/11-26/10738336.shtml",
-      "source": "中新网·财经",
-      "pubDate": "Thu, 26 Nov 2026 19:52:48 +0800",
-      "description": "中新网河源11月26日电 (张璐 周东城)记者26日从广州海关所属河源海关(简称“河源海关”)获悉，今年1月至10月，河源海关签发输APEC其他经济体原产地证书5264份，同比增长16.3%，签证金额近10亿元(人民币，下同)，为企业在进口国享受关税优惠约8600万元。",
-      "channelId": "trade",
-      "channelName": "国际贸易",
       "region": "domestic"
     }
   ]
